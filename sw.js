@@ -1,6 +1,6 @@
 /* Bratanki service worker (v13). Az alkalmazás héja hálózat-először, tartalék a gyorsítótár;
    a hangcsomagok (az a/ mappa verziózott csomagjai) változatlanok, ezért gyorsítótár-először; a betűtípusok a háttérben frissülnek. */
-var V = '62203319cb', SHELL = 'bratanki-shell-' + V, AUDIO = 'bratanki-audio', FONTS = 'bratanki-fonts';
+var V = 'a9f9330a92', SHELL = 'bratanki-shell-' + V, AUDIO = 'bratanki-audio', FONTS = 'bratanki-fonts';
 var CORE = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'a/index.json'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(SHELL).then(function (c) { return c.addAll(CORE); }).then(function () { return self.skipWaiting(); }));
