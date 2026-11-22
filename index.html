@@ -889,6 +889,32 @@ details.more>summary::-webkit-details-marker{display:none}
 details.more>summary::before{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s;margin-right:2px}
 details.more[open]>summary::before{transform:rotate(45deg)}
 .more-b{margin-top:6px}
+/* Út: sín az állomások között */
+.route{gap:0}
+.route::before{display:none}
+.lk{display:block;height:14px;margin-left:39px;border-left:3px solid var(--line)}
+.lk.on{border-left-color:var(--karm)}
+/* a kör vége: érkezési jegy */
+.ticket.arrive{margin-top:14px}
+.ticket.arrive .tk-k{font-size:14px}
+.ticket.arrive .tk-t{font-size:22px}
+.ticket.arrive .tk-s b{color:var(--ink);font-variant-numeric:tabular-nums}
+.ticket.arrive .tk-stub{width:96px}
+.ticket.arrive .tk-stub .sum-n{font:600 34px/1 var(--f-ui);color:var(--pl)}
+.ticket.arrive .tk-stub small{font-size:13px;opacity:.8}
+.board-go.fin-go{width:100%;margin:0}
+.sec-h{font:600 24px/1.2 var(--f-pl);margin:28px 4px -12px}
+/* Tarsoly: a rendfokozat táblán */
+.rankb .rk-b{padding:14px 16px 16px}
+.rk-n{font:600 32px/1.1 var(--f-ui);letter-spacing:-.01em}
+.rk-pl{margin-top:4px;font-size:20px}
+.rk-pl .pl{color:var(--gold-pl);border-bottom-color:rgba(243,207,138,.45)}
+.rk-pl .pl:hover{background:rgba(255,255,255,.08)}
+.rk-x{margin-top:10px;font-size:14.5px;color:var(--board-mute)}
+.rk-x b{color:var(--board-ink)}
+.rk-pl2{font-family:var(--f-pl);color:var(--gold-pl)}
+.rk-bar{height:8px;border-radius:4px;background:rgba(255,255,255,.14);margin-top:14px;overflow:hidden}
+.rk-bar i{display:block;height:100%;background:var(--gold);border-radius:4px}
 
 </style>
 </head>
@@ -1733,8 +1759,8 @@ function finish() {
   var award = sessDone(SE, SE.xp + bonus);
   el('s-bar').style.width = '100%'; el('s-cnt').textContent = '';
   var seen = {}, miss = SE.wrong.filter(function (w) { var k = w.ex.src || w.ex.q || w.ex.w || (w.ex.w && w.ex.w[0]); if (seen[k]) return false; seen[k] = 1; return true; });
-  var h = '<div class="center col" style="margin-top:18px;gap:6px"><div class="eyebrow">' + esc(o.title || 'Gyakorlás') + '</div><div class="sum-n">+' + (SE.xp + bonus) + '</div><div class="muted">korty a mai pohárba</div>'
-    + '<div style="margin-top:8px">Elsőre jó: <b>' + SE.first + '</b> / ' + SE.n + (acc === 100 ? ' – hibátlan.' : '') + '</div></div>' + award;
+  var h = '<div class="ticket arrive"><span class="tk-main"><span class="tk-k">' + (acc === 100 ? 'Hibátlanul megérkeztél' : 'Megérkeztél') + '</span><span class="tk-t">' + soft(o.title || 'Gyakorlás') + '</span><span class="tk-s">Elsőre jó: <b>' + SE.first + '</b> / ' + SE.n + ' · ' + acc + '%</span></span>'
+    + '<span class="tk-stub"><span class="sum-n">+' + (SE.xp + bonus) + '</span><small>korty</small></span></div>' + award;
   if (miss.length) {
     h += '<div class="eyebrow" style="margin-top:22px">Ezeken megcsúsztál</div><div class="missed">' + miss.map(function (w) {
       var ex = w.ex, q = ex.t === 'fc' ? '«' + ex.w[0] + '» – ' + esc(ex.w[1]) : fmt(ex.q || (ex.say ? '«' + ex.say + '»' : '') || '«' + (ex.w || '') + '»');
@@ -1742,7 +1768,9 @@ function finish() {
     }).join('') + '</div><p class="tiny muted" style="margin-top:10px">A hibák bekerültek az Edzés › Hibáim közé.</p>';
   }
   sBody(h);
-  sFoot('<div class="row">' + (o.again ? '<button class="btn alt grow" data-a="s-again">Még egy kör</button>' : '') + '<button class="btn grow" data-a="s-quit">Rendben</button></div>' + (typeof napiFootBtn === 'function' ? napiFootBtn() : ''));
+  var nf = typeof napiFootBtn === 'function' ? napiFootBtn() : '';
+  sFoot(nf ? nf + '<div class="row" style="margin-top:10px">' + (o.again ? '<button class="btn quiet grow" data-a="s-again">Még egy kör</button>' : '') + '<button class="btn quiet grow" data-a="s-quit">Rendben</button></div>'
+    : '<div class="row">' + (o.again ? '<button class="btn alt grow" data-a="s-again">Még egy kör</button>' : '') + '<button class="btn grow" data-a="s-quit">Rendben</button></div>');
 }
 ACT['s-again'] = function () { var o = SE.o; SE = null; el('sess').hidden = true; o.again(); };
 
@@ -2500,8 +2528,8 @@ ROUTES.beallitasok = function () {
     + '<div class="row wrap"><button class="btn sm quiet" data-a="bkin">Visszatöltés kódból</button><label class="btn sm quiet filebtn">Visszatöltés fájlból<input type="file" id="bk-file" accept=".txt,text/plain"></label></div><div id="bk-x"></div></div>'
     + '<div class="row"><button class="btn sm quiet" data-a="reset">Minden haladás törlése</button></div><div id="reset-x"></div></section>';
   h += '<section class="card col"><div class="eyebrow">Jelzett hibák</div><p class="small" id="rep-st">' + esc(repMsg()) + '</p>' + ((S.rep || []).length ? '<div class="row"><button class="btn sm quiet" data-a="repcopy">Lista másolása</button></div><div id="rep-x"></div>' : '') + '</section>';
-  h += '<section class="card col"><div class="eyebrow">Miből van ez</div><p class="small">A ragozási táblák és az összes lengyel szóalak ellenőrzése a varsói SGJP nyelvtani szótárra (Morfeusz 2) épül. A lengyel szöveg betűtípusa a Półtawski-antikva újrarajzolása: Adam Półtawski az 1920-as években kifejezetten a lengyel nyelv sok ferde szárú betűjéhez (k, w, y, z) tervezte. A felület betűje, a Signika, szintén lengyel tervező, Anna Giedryś munkája.</p>'
-    + '<p class="small muted">Őszintén: C2-re senkit nem visz fel egy lecke­sor. A nyelvtant a felsőfokig és az első pár ezer szót ez megadja; onnan a szint abból nő, amennyit olvasol, hallgatsz és írsz. Ezért van benne az olvasó, a saját szótár, a gyár és a Tanár: ezek nem fogynak el.</p></section>';
+  h += '<section class="card col"><div class="eyebrow">Az alkalmazásról</div>' + more('Miből van ez', '<p class="small">A ragozási táblák és az összes lengyel szóalak ellenőrzése a varsói SGJP nyelvtani szótárra (Morfeusz 2) épül. A lengyel szöveg betűtípusa a Półtawski-antikva újrarajzolása: Adam Półtawski az 1920-as években kifejezetten a lengyel nyelv sok ferde szárú betűjéhez (k, w, y, z) tervezte. A felület betűje, a Signika, szintén lengyel tervező, Anna Giedryś munkája.</p>'
+    + '<p class="small muted">Őszintén: C2-re senkit nem visz fel egy lecke­sor. A nyelvtant a felsőfokig és az első pár ezer szót ez megadja; onnan a szint abból nő, amennyit olvasol, hallgatsz és írsz. Ezért van benne az olvasó, a saját szótár, a gyár és a Tanár: ezek nem fogynak el.</p>') + '</section>';
   view.innerHTML = h + '</div>';
 };
 ACT.set = function (a) {
@@ -2665,15 +2693,15 @@ ACT.glai = function () {
 };
 
 /* ---------- Szókincstár ---------- */
-var SZ_GRP = [['k2', 'Gyakorisági szótár · az első kétezer', 'A leggyakoribb lengyel szavak az Út paklijain felül. Ezekkel már újságot olvasol.'],
-  ['k3', 'Gyakorisági szótár · 3. ezres', 'A 2001–3000. leggyakoribb szó: a középfok törzsanyaga.'],
-  ['k4', 'Gyakorisági szótár · 4. ezres', 'A 3001–4000. leggyakoribb szó: hírek, hivatal, közélet.'],
-  ['k5', 'Gyakorisági szótár · 5. ezres', 'A 4001–5000. leggyakoribb szó: innen kezdődik a felsőfok.'],
-  ['k6', 'Gyakorisági szótár · 6. ezres', 'Az 5001–6000. leggyakoribb szó: közélet, gazdaság, a felsőfok eleje.'],
-  ['k7', 'Gyakorisági szótár · 7. ezres', 'A 6001–7000. szó: árnyaltabb igék, szakmák, intézmények.'],
-  ['k8', 'Gyakorisági szótár · 8. ezres', 'A 7001–8000. szó: sajtó, jog, technika és a köznyelv színesebb szavai.'],
-  ['k9', 'Gyakorisági szótár · 9. ezres', 'A 8001–9000. szó: irodalom, tudomány, régies és bizalmas szavak.'],
-  ['k10', 'Gyakorisági szótár · 10. ezres', 'A 9001–10 000. szó: itt húzódik a C1 és a C2 szókincs határa.'],
+var SZ_GRP = [['k2', 'Az első kétezer szó', 'A leggyakoribb lengyel szavak az Út paklijain felül. Ezekkel már újságot olvasol.'],
+  ['k3', 'A 3. ezer szó', 'A 2001–3000. leggyakoribb szó: a középfok törzsanyaga.'],
+  ['k4', 'A 4. ezer szó', 'A 3001–4000. leggyakoribb szó: hírek, hivatal, közélet.'],
+  ['k5', 'Az 5. ezer szó', 'A 4001–5000. leggyakoribb szó: innen kezdődik a felsőfok.'],
+  ['k6', 'A 6. ezer szó', 'Az 5001–6000. leggyakoribb szó: közélet, gazdaság, a felsőfok eleje.'],
+  ['k7', 'A 7. ezer szó', 'A 6001–7000. szó: árnyaltabb igék, szakmák, intézmények.'],
+  ['k8', 'A 8. ezer szó', 'A 7001–8000. szó: sajtó, jog, technika és a köznyelv színesebb szavai.'],
+  ['k9', 'A 9. ezer szó', 'A 8001–9000. szó: irodalom, tudomány, régies és bizalmas szavak.'],
+  ['k10', 'A 10. ezer szó', 'A 9001–10 000. szó: itt húzódik a C1 és a C2 szókincs határa.'],
   ['sz', 'Szakszókincs', 'Jog, orvoslás, gazdaság, tudomány: amit a gyakorisági lista nem ad ki, de a felsőfokú vizsga és az élet igen.'],
   ['id', 'Szólások és közmondások', 'Állandó fordulatok magyar megfelelővel, és azzal, amit a lengyel szó szerint mond.']];
 var SZ_OPEN = { k2: 1 };
@@ -2682,11 +2710,11 @@ function deckList(f) { return Object.keys(DECKS).filter(function (k) { var d = D
 ROUTES.szotar = function () {
   var all = Object.keys(WORDS).length, fq = deckList(true), pd = deckList(false);
   var h = topBar('Szókincstár', learnedCount() + ' szót tanulsz a ' + all + '-ből', 'edzes') + '<div class="stack">';
-  h += '<section class="card key"><div class="eyebrow">Saját szótár · ' + S.own.length + ' szó</div><p class="small muted" style="margin:6px 0 10px">Ide kerül minden szó, amit olvasás közben vagy a Tanárnál felveszel. Kézzel is írhatsz bele.</p>'
+  h += '<section class="card key"><div class="eyebrow">Saját szótár · ' + S.own.length + ' szó</div><p class="small muted" style="margin:6px 0 10px">Amit olvasás közben felveszel, ide kerül. Kézzel is írhatsz bele.</p>'
     + '<div class="row" style="gap:8px"><input class="inp grow" id="ow-pl" lang="pl" placeholder="lengyelül" autocapitalize="off" autocomplete="off" spellcheck="false" style="min-width:0"><input class="inp grow" id="ow-hu" placeholder="magyarul" autocomplete="off" style="min-width:0;font:400 17px/1.3 var(--f-ui)"></div>' + keysHtml()
     + '<div class="row" style="margin-top:12px"><button class="btn grow" data-a="ownman">Felvesz</button>' + (S.own.length ? '<a class="btn alt grow" href="#lecke-own">Megnyitás</a>' : '') + '</div></section>';
-  h += '<section class="card"><div class="eyebrow">A C2-ig</div><p class="small muted" style="margin:6px 0 10px">A Felfedező gyakorisági sorrendben adja a 20 000 leggyakoribb lengyel szót, onnan, ahol tartasz. A Szókincsmérő öt perc alatt megmondja, hol tartasz.</p><div class="row"><a class="btn grow" href="#felfedezo">Felfedező</a><a class="btn alt grow" href="#meres">Szókincsmérő</a></div></section>';
-  h += '</div>';
+  h += '</div>' + (typeof toolGroup === 'function' ? toolGroup('A C2-ig', 'g', [toolRow({ h: 'felfedezo', i: I.compass, t: 'Felfedező', s: 'a 20 000 leggyakoribb szó, onnan, ahol tartasz' }), toolRow({ h: 'meres', i: I.gauge, t: 'Szókincsmérő', s: 'öt perc alatt megmondja, hol tartasz' })]) : '')
+    + '<h2 class="sec-h">Gyakorisági szótár</h2>';
   SZ_GRP.forEach(function (gr) {
     var l = fq.filter(function (d) { return d.g === gr[0]; }); if (!l.length) return;
     var fn = 0; l.forEach(function (d) { fn += d.w.length; });
@@ -2994,8 +3022,8 @@ ROUTES.tarsoly = function () {
   var ri = rankIdx(S.xp), r = RANKS[ri], nx = RANKS[ri + 1], bl = badgeList(), r0 = S.rec || {};
   S.bad = S.bad || {};
   var h = topBar('Tarsoly', 'Rendfokozatod, számaid, kitüntetéseid', 'ma') + '<div class="stack">';
-  h += '<section class="card key"><div class="eyebrow">Rendfokozatod · ' + (ri + 1) + ' / ' + RANKS.length + '</div><div class="bignum" style="margin-top:8px">' + r[2] + '</div><div style="margin-top:6px">lengyelül: <span class="pl" role="button" tabindex="0" lang="pl">' + r[1] + '</span></div>' + (r[3] ? '<p class="small muted" style="margin-top:6px">' + fmt(r[3]) + '</p>' : '')
-    + (nx ? '<div class="row" style="margin-top:12px"><div class="bar grow"><i style="width:' + Math.round(100 * (S.xp - r[0]) / (nx[0] - r[0])) + '%"></i></div></div><p class="small muted" style="margin-top:6px">Még ' + (nx[0] - S.xp) + ' korty az előléptetésig: ' + nx[2] + ' (<span lang="pl" style="font-family:var(--f-pl)">' + nx[1] + '</span>).</p>' : '<p class="small muted" style="margin-top:6px">Ennél feljebb nincs.</p>') + '</section>';
+  h += '<section class="board rankb"><div class="board-h"><h3>Rendfokozatod</h3><span>' + (ri + 1) + ' / ' + RANKS.length + '</span></div><div class="rk-b"><div class="rk-n">' + r[2] + '</div><div class="rk-pl"><span class="pl" role="button" tabindex="0" lang="pl">' + r[1] + '</span></div>' + (r[3] ? '<p class="rk-x">' + fmt(r[3]) + '</p>' : '')
+    + (nx ? '<div class="rk-bar"><i style="width:' + Math.round(100 * (S.xp - r[0]) / (nx[0] - r[0])) + '%"></i></div><p class="rk-x">Még <b>' + (nx[0] - S.xp) + '</b> korty az előléptetésig: ' + nx[2] + ' (<span lang="pl" class="rk-pl2">' + nx[1] + '</span>).</p>' : '<p class="rk-x">Ennél feljebb nincs.</p>') + '</div></section>';
   h += c2Card();
   h += '<section class="card"><div class="eyebrow">Számok</div><div class="stats">' + [[streak(), 'nap egymás után'], [learnedCount(), 'tanult szó'], [Object.keys(S.done).length, 'kész lecke'], [S.xp, 'korty összesen'], [r0.duel || 0, 'párbajrekord'], [r0.rd || 0, 'elolvasott szöveg']].map(function (s) { return '<div><b>' + s[0] + '</b><span>' + s[1] + '</span></div>'; }).join('') + '</div>'
     + '<div class="eyebrow" style="margin-top:16px">Az elmúlt tizenkét hét</div>' + heatmap() + '<p class="tiny muted" style="margin-top:6px">Minél zöldebb, annál teltebb volt aznap a pohár.</p></section>';
@@ -5095,7 +5123,7 @@ function dayFromSession(o) {
 function napiFootBtn() {
   var nx = napiNext();
   if (!nx) return '';
-  return '<button class="btn wide alt" style="margin-top:10px" data-a="napinext">Tovább a mai tervben: ' + NAPI[nx][0] + '</button>';
+  return '<button class="board-go fin-go" data-a="napinext">Tovább a mai tervben: ' + NAPI[nx][0] + '</button>';
 }
 ACT.napinext = function () {
   if (SE) { clearTimeout(SE.auto); SE = null; el('sess').hidden = true; el('sess').innerHTML = ''; }
@@ -5427,9 +5455,12 @@ ROUTES.ut = function () {
   var h = topBar('Az Út', 'Tíz állomás, tíz történet') + mapCard();
   if (nx) h += '<a class="btn wide" style="margin-top:14px" href="#lecke-' + nx.id + '">' + (S.xp ? 'Folytatás: ' : 'Kezdd itt: ') + soft(nx.t) + '</a>';
   h += '<div class="route">';
+  var first = true;
   STAGES.forEach(function (st, i) {
     var s = stStat(st); if (!s.n) return;
     var done = stageDone(st), open = UT.open === i, state = done ? 'done' : i === ci ? 'cur' : '';
+    if (!first) h += '<span class="lk' + (i <= ci ? ' on' : '') + '" aria-hidden="true"></span>';
+    first = false;
     h += '<section class="stn ' + state + (open ? ' open' : '') + '" id="stage-' + i + '"><button class="stn-h" data-a="stn" data-i="' + i + '" aria-expanded="' + (open ? 'true' : 'false') + '">'
       + ring(s.dn / s.n, 54, EMB[st.em] || '', state)
       + '<span class="grow"><span class="stn-k">' + (i + 1) + '. állomás · ' + st.lvl + '</span><span class="stn-t">' + st.name + '</span><span class="stn-tie">' + st.tie + '</span></span>'
@@ -6308,7 +6339,7 @@ function pwaSettings() {
   if (pwaAlone()) {
     var c = byokGet();
     h += '<section class="card col" id="pwa-ai"><div class="eyebrow">Claude a telepített alkalmazásban</div>'
-      + '<p class="small">Itt nincs Claude-fiókos kapcsolat. A tanár, az írás és a szóbeli értékelése és a szabad válaszok átnézése a saját Anthropic API-kulcsoddal működik. A kulcs csak ezen az eszközön tárolódik, a kérések közvetlenül az Anthropichoz mennek, a díjat a kulcshoz tartozó fiókról vonják le.</p>'
+      + '<p class="small">A Tanár és a szabad válaszok értékelése itt a saját Claude-kulcsoddal működik.</p>' + (typeof more === 'function' ? more('Hogyan működik a kulcs?', '<p class="small">Itt nincs Claude-fiókos kapcsolat, ezért a kérések a saját Anthropic API-kulcsoddal mennek (az Anthropic a Claude-ot fejlesztő cég). A kulcs csak ezen az eszközön tárolódik, a kérések közvetlenül az Anthropichoz mennek, a díjat a kulcshoz tartozó fiókról vonják le.</p>') : '')
       + (c.key ? '<p class="small" style="margin-top:8px"><b>Beállítva:</b> a kulcs vége …' + esc(c.key.slice(-4)) + '</p>' : '')
       + '<div class="field"><span class="lab">' + (c.key ? 'Új kulcs' : 'API-kulcs') + '</span><input class="inp" id="pwa-key" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sk-ant-…"></div>'
       + '<div class="field"><span class="lab">Modell</span><div class="seg">' + BYOK_MODELS.map(function (m) { return '<button data-a="pwamodel" data-v="' + m[0] + '" aria-pressed="' + (c.model === m[0]) + '">' + m[1] + '</button>'; }).join('') + '</div>'
