@@ -1,0 +1,28 @@
+wiki: 116 tétel
+NINCS KÉP a szócikkben jankochanowski | Czarnolas 
+NINCS KÉP a szócikkben pantwardowski | Pan Twardowski 
+NINCS KÉP a szócikkben januszkorczak | Dom Sierot w Warszawie (hiányzik)
+NINCS KÉP a szócikkben andrzejwajda | Muzeum Sztuki i Techniki Japońskiej Manggha (hiányzik)
+NINCS KÉP a szócikkben polonez | Polonez 
+NINCS KÉP a szócikkben zdzislawbeksinski | Zamek w Sanoku (hiányzik)
+NINCS KÉP a szócikkben mazowsze | Pałac w Karolinie 
+NINCS KÉP a szócikkben irenaszewinska | Stadion im. Zdzisława Krzyszkowiaka w Bydgoszczy (hiányzik)
+NINCS KÉP a szócikkben janheweliusz | Selenographia 
+NINCS KÉP a szócikkben zuzel | Stadion im. Alfreda Smoczyka w Lesznie 
+NINCS KÉP a szócikkben gdansk | Żuraw (Gdańsk) (hiányzik)
+NINCS KÉP a szócikkben swietakinga | Klasztor Klarysek w Starym Sączu (hiányzik)
+NINCS KÉP a szócikkben rok1956 | Rewolucja węgierska 1956 (hiányzik)
+NINCS KÉP a szócikkben polakwegierdwabratanki | Szabla 
+NINCS KÉP a szócikkben jagiellonowienawegrzech | Bitwa pod Mohaczem (1526) (hiányzik)
+  429, várok 123 s 18:08:06
+  429, várok 123 s 18:10:09
+  429, várok 123 s 18:12:12
+  429, várok 123 s 18:14:16
+  429, várok 123 s 18:16:19
+  429, várok 123 s 18:18:22
+  429, várok 123 s 18:20:25
+  429, várok 123 s 18:22:28
+HIBA stanislawlem HTTP Error 429: Too many requests. Please contact the Wikimedia SRE team at noc@wikimedia.org and refer to this message. (daab851)
+  429, várok 123 s 18:24:31
+  429, várok 123 s 18:26:34
+  429, várok 123 s 18:28:37
