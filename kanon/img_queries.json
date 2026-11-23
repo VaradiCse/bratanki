@@ -1,0 +1,992 @@
+{
+ "mieszkoi": {
+  "name": "Mieszko I",
+  "cat": "t",
+  "img": "Poznań Cathedral"
+ },
+ "boleslawchrobry": {
+  "name": "Bolesław Chrobry",
+  "cat": "t",
+  "img": "Gniezno Cathedral"
+ },
+ "kazimierzwielki": {
+  "name": "Kazimierz Wielki",
+  "cat": "t",
+  "img": "Collegium Maius Kraków"
+ },
+ "jadwigaijagiello": {
+  "name": "Jadwiga i Jagiełło",
+  "cat": "t",
+  "img": "Wawel Cathedral"
+ },
+ "grunwald": {
+  "name": "Grunwald",
+  "cat": "t",
+  "img": "Grunwald battlefield monument"
+ },
+ "unialubelska": {
+  "name": "Unia lubelska",
+  "cat": "t",
+  "img": "Lublin Castle"
+ },
+ "stefanbatory": {
+  "name": "Stefan Batory",
+  "cat": "t",
+  "img": "Vilnius University courtyard"
+ },
+ "potopszwedzki": {
+  "name": "Potop szwedzki",
+  "cat": "t",
+  "img": "Krzyżtopór castle ruins"
+ },
+ "janiiisobieski": {
+  "name": "Jan III Sobieski",
+  "cat": "t",
+  "img": "Wilanów Palace"
+ },
+ "rozbiory": {
+  "name": "Rozbiory",
+  "cat": "t",
+  "img": "Partitions of Poland map"
+ },
+ "konstytucja3maja": {
+  "name": "Konstytucja 3 maja",
+  "cat": "t",
+  "img": "Konstytucja 3 Maja 1791 Matejko"
+ },
+ "tadeuszkosciuszko": {
+  "name": "Tadeusz Kościuszko",
+  "cat": "t",
+  "img": "Kopiec Kościuszki"
+ },
+ "powstanielistopadowe": {
+  "name": "Powstanie listopadowe",
+  "cat": "t",
+  "img": "Belweder Warszawa"
+ },
+ "powstaniestyczniowe": {
+  "name": "Powstanie styczniowe",
+  "cat": "t",
+  "img": "Cytadela Warszawska Brama Straceń"
+ },
+ "jozefpilsudski": {
+  "name": "Józef Piłsudski",
+  "cat": "t",
+  "img": "Kopiec Piłsudskiego"
+ },
+ "11listopada1918": {
+  "name": "11 listopada 1918",
+  "cat": "t",
+  "img": "Grób Nieznanego Żołnierza Warszawa"
+ },
+ "bitwawarszawska": {
+  "name": "Bitwa Warszawska",
+  "cat": "t",
+  "img": "File:Polish defences near Milosna, Battle of Warsaw, August 1920.jpg"
+ },
+ "1wrzesnia1939": {
+  "name": "1 września 1939",
+  "cat": "t",
+  "img": "Wieluń 1939"
+ },
+ "katyn": {
+  "name": "Katyń",
+  "cat": "t",
+  "img": "Katyń war cemetery"
+ },
+ "powstaniewgetciewarszawskim": {
+  "name": "Powstanie w getcie warszawskim",
+  "cat": "t",
+  "img": "Umschlagplatz monument Warsaw"
+ },
+ "powstaniewarszawskie": {
+  "name": "Powstanie warszawskie",
+  "cat": "t",
+  "img": "Warsaw Old Town 1945 ruins"
+ },
+ "poznanskiczerwiec": {
+  "name": "Poznański Czerwiec",
+  "cat": "t",
+  "img": "Poznańskie Krzyże pomnik"
+ },
+ "janpawelii": {
+  "name": "Jan Paweł II",
+  "cat": "t",
+  "img": "Wadowice basilica"
+ },
+ "solidarnosc": {
+  "name": "Solidarność",
+  "cat": "t",
+  "img": "Tablice 21 postulatów"
+ },
+ "stanwojenny": {
+  "name": "Stan wojenny",
+  "cat": "t",
+  "img": "Pomnik Wujek Katowice"
+ },
+ "okraglystol": {
+  "name": "Okrągły Stół",
+  "cat": "t",
+  "img": "Okrągły Stół 1989 Pałac Prezydencki"
+ },
+ "lechwalesa": {
+  "name": "Lech Wałęsa",
+  "cat": "t",
+  "img": "Brama nr 2 Stocznia Gdańska"
+ },
+ "zjazdgnieznienski": {
+  "name": "Zjazd gnieźnieński",
+  "cat": "t",
+  "img": "Drzwi Gnieźnieńskie"
+ },
+ "rozbiciedzielnicowe": {
+  "name": "Rozbicie dzielnicowe",
+  "cat": "t",
+  "img": "Poland 1138 map"
+ },
+ "najazdtatarski": {
+  "name": "Najazd tatarski",
+  "cat": "t",
+  "img": "Legnickie Pole kościół"
+ },
+ "holdpruski": {
+  "name": "Hołd pruski",
+  "cat": "t",
+  "img": "Hołd pruski Matejko"
+ },
+ "zlotywiek": {
+  "name": "Złoty wiek",
+  "cat": "t",
+  "img": "Wawel arcaded courtyard"
+ },
+ "liberumveto": {
+  "name": "Liberum veto",
+  "cat": "t",
+  "img": "Zamek Królewski Sala Senatorska"
+ },
+ "legionydabrowskiego": {
+  "name": "Legiony Dąbrowskiego",
+  "cat": "t",
+  "img": "Muzeum Hymnu Narodowego Będomin"
+ },
+ "ksiestwowarszawskie": {
+  "name": "Księstwo Warszawskie",
+  "cat": "t",
+  "img": "Księstwo Warszawskie mapa"
+ },
+ "montecassino": {
+  "name": "Monte Cassino",
+  "cat": "t",
+  "img": "Polish War Cemetery Monte Cassino"
+ },
+ "armiakrajowa": {
+  "name": "Armia Krajowa",
+  "cat": "t",
+  "img": "Kotwica Polska Walcząca"
+ },
+ "enigma": {
+  "name": "Enigma",
+  "cat": "t",
+  "img": "Enigma machine"
+ },
+ "dywizjon303": {
+  "name": "Dywizjon 303",
+  "cat": "t",
+  "img": "Polish War Memorial Northolt"
+ },
+ "marzec1968": {
+  "name": "Marzec 1968",
+  "cat": "t",
+  "img": "Dworzec Gdański tablica 1968"
+ },
+ "wybory4czerwca1989": {
+  "name": "Wybory 4 czerwca 1989",
+  "cat": "t",
+  "img": "Sejm building Warsaw"
+ },
+ "polskawnatoiue": {
+  "name": "Polska w NATO i UE",
+  "cat": "t",
+  "img": "Polska flaga Unia Europejska"
+ },
+ "jankochanowski": {
+  "name": "Jan Kochanowski",
+  "cat": "i",
+  "img": "Czarnolas Muzeum Jana Kochanowskiego"
+ },
+ "adammickiewicz": {
+  "name": "Adam Mickiewicz",
+  "cat": "i",
+  "img": "Navahrudak Mickiewicz House Museum"
+ },
+ "juliuszslowacki": {
+  "name": "Juliusz Słowacki",
+  "cat": "i",
+  "img": "Krypta Wieszczów Wawel"
+ },
+ "cypriankamilnorwid": {
+  "name": "Cyprian Kamil Norwid",
+  "cat": "i",
+  "img": "Pałac Zamoyskich Warszawa"
+ },
+ "aleksanderfredro": {
+  "name": "Aleksander Fredro",
+  "cat": "i",
+  "img": "Zamek Kamieniec Odrzykoń"
+ },
+ "henryksienkiewicz": {
+  "name": "Henryk Sienkiewicz",
+  "cat": "i",
+  "img": "Pałac w Oblęgorku"
+ },
+ "boleslawprus": {
+  "name": "Bolesław Prus",
+  "cat": "i",
+  "img": "Krakowskie Przedmieście Warszawa"
+ },
+ "wladyslawreymont": {
+  "name": "Władysław Reymont",
+  "cat": "i",
+  "img": "Pałac Poznańskiego Łódź"
+ },
+ "stanislawwyspianski": {
+  "name": "Stanisław Wyspiański",
+  "cat": "i",
+  "img": "Wyspiański Bóg Ojciec witraż kościół Franciszkanów Kraków"
+ },
+ "witoldgombrowicz": {
+  "name": "Witold Gombrowicz",
+  "cat": "i",
+  "img": "Wsola pałac Gombrowicz"
+ },
+ "czeslawmilosz": {
+  "name": "Czesław Miłosz",
+  "cat": "i",
+  "img": "Kościół na Skałce Kraków"
+ },
+ "wislawaszymborska": {
+  "name": "Wisława Szymborska",
+  "cat": "i",
+  "img": "Kraków Krupnicza Dom Literatów"
+ },
+ "zbigniewherbert": {
+  "name": "Zbigniew Herbert",
+  "cat": "i",
+  "img": "Lviv Old Town panorama"
+ },
+ "stanislawlem": {
+  "name": "Stanisław Lem",
+  "cat": "i",
+  "img": "BRITE-PL Lem satellite"
+ },
+ "ryszardkapuscinski": {
+  "name": "Ryszard Kapuściński",
+  "cat": "i",
+  "img": "Addis Ababa Menelik Palace"
+ },
+ "slawomirmrozek": {
+  "name": "Sławomir Mrożek",
+  "cat": "i",
+  "img": "-"
+ },
+ "tadeuszrozewicz": {
+  "name": "Tadeusz Różewicz",
+  "cat": "i",
+  "img": "-"
+ },
+ "juliantuwim": {
+  "name": "Julian Tuwim",
+  "cat": "i",
+  "img": "Pt47 steam locomotive Wolsztyn"
+ },
+ "olgatokarczuk": {
+  "name": "Olga Tokarczuk",
+  "cat": "i",
+  "img": "Kotlina Kłodzka landscape"
+ },
+ "pantadeusz": {
+  "name": "Pan Tadeusz",
+  "cat": "i",
+  "img": "Pan Tadeusz manuscript Ossolineum"
+ },
+ "dziady": {
+  "name": "Dziady",
+  "cat": "i",
+  "img": "Teatr Narodowy Warszawa"
+ },
+ "trylogia": {
+  "name": "Trylogia",
+  "cat": "i",
+  "img": "Kamianets-Podilskyi Castle"
+ },
+ "quovadis": {
+  "name": "Quo vadis",
+  "cat": "i",
+  "img": "Chiesa del Domine Quo Vadis"
+ },
+ "wesele": {
+  "name": "Wesele",
+  "cat": "i",
+  "img": "Rydlówka Bronowice"
+ },
+ "kamienienaszaniec": {
+  "name": "Kamienie na szaniec",
+  "cat": "i",
+  "img": "Szare Szeregi znak"
+ },
+ "brunoschulz": {
+  "name": "Bruno Schulz",
+  "cat": "i",
+  "img": "Drohobych Old Town"
+ },
+ "pantwardowski": {
+  "name": "Pan Twardowski",
+  "cat": "i",
+  "img": "Lustro Twardowskiego Węgrów"
+ },
+ "witkacy": {
+  "name": "Witkacy",
+  "cat": "i",
+  "img": "Zakopane willa Koliba"
+ },
+ "mikolajrej": {
+  "name": "Mikołaj Rej",
+  "cat": "i",
+  "img": "Nagłowice dworek Reja"
+ },
+ "ignacykrasicki": {
+  "name": "Ignacy Krasicki",
+  "cat": "i",
+  "img": "Lidzbark Warmiński castle"
+ },
+ "andrzejsapkowski": {
+  "name": "Andrzej Sapkowski",
+  "cat": "i",
+  "img": "-"
+ },
+ "koziolekmatolek": {
+  "name": "Koziołek Matołek",
+  "cat": "i",
+  "img": "Pacanów Europejskie Centrum Bajki"
+ },
+ "janbrzechwa": {
+  "name": "Jan Brzechwa",
+  "cat": "i",
+  "img": "Szczebrzeszyn pomnik chrząszcza"
+ },
+ "januszkorczak": {
+  "name": "Janusz Korczak",
+  "cat": "i",
+  "img": "Dom Sierot Krochmalna Warszawa"
+ },
+ "fryderykchopin": {
+  "name": "Fryderyk Chopin",
+  "cat": "m",
+  "img": "Żelazowa Wola Chopin manor"
+ },
+ "stanislawmoniuszko": {
+  "name": "Stanisław Moniuszko",
+  "cat": "m",
+  "img": "Teatr Wielki Warszawa"
+ },
+ "ignacyjanpaderewski": {
+  "name": "Ignacy Jan Paderewski",
+  "cat": "m",
+  "img": "Hotel Bazar Poznań"
+ },
+ "krzysztofpenderecki": {
+  "name": "Krzysztof Penderecki",
+  "cat": "m",
+  "img": "Lusławice Europejskie Centrum Muzyki Krzysztofa Pendereckiego"
+ },
+ "czeslawniemen": {
+  "name": "Czesław Niemen",
+  "cat": "m",
+  "img": "Hammond organ"
+ },
+ "janmatejko": {
+  "name": "Jan Matejko",
+  "cat": "m",
+  "img": "Stańczyk Matejko"
+ },
+ "andrzejwajda": {
+  "name": "Andrzej Wajda",
+  "cat": "m",
+  "img": "Manggha Kraków"
+ },
+ "krzysztofkieslowski": {
+  "name": "Krzysztof Kieślowski",
+  "cat": "m",
+  "img": "Łódź Film School"
+ },
+ "romanpolanski": {
+  "name": "Roman Polański",
+  "cat": "m",
+  "img": "Kraków ghetto wall Lwowska"
+ },
+ "stanislawbareja": {
+  "name": "Stanisław Bareja",
+  "cat": "m",
+  "img": "-"
+ },
+ "polonez": {
+  "name": "Polonez",
+  "cat": "m",
+  "img": "Teofil Kwiatkowski Polonez Chopina"
+ },
+ "mazurekikrakowiak": {
+  "name": "Mazurek i krakowiak",
+  "cat": "m",
+  "img": "Strój krakowski krakowiak"
+ },
+ "wojciechkilar": {
+  "name": "Wojciech Kilar",
+  "cat": "m",
+  "img": "NOSPR Katowice concert hall"
+ },
+ "krzysztofkomeda": {
+  "name": "Krzysztof Komeda",
+  "cat": "m",
+  "img": "-"
+ },
+ "marekgrechuta": {
+  "name": "Marek Grechuta",
+  "cat": "m",
+  "img": "-"
+ },
+ "polskirocklat80": {
+  "name": "Polski rock lat 80",
+  "cat": "m",
+  "img": "Jarocin festiwal"
+ },
+ "discopolo": {
+  "name": "Disco polo",
+  "cat": "m",
+  "img": "-"
+ },
+ "seksmisja": {
+  "name": "Seksmisja",
+  "cat": "m",
+  "img": "-"
+ },
+ "ida": {
+  "name": "Ida",
+  "cat": "m",
+  "img": "-"
+ },
+ "polskaszkolaplakatu": {
+  "name": "Polska szkoła plakatu",
+  "cat": "m",
+  "img": "Muzeum Plakatu w Wilanowie"
+ },
+ "jozefchelmonski": {
+  "name": "Józef Chełmoński",
+  "cat": "m",
+  "img": "Chełmoński Babie lato"
+ },
+ "olgaboznanska": {
+  "name": "Olga Boznańska",
+  "cat": "m",
+  "img": "Boznańska Dziewczynka z chryzantemami"
+ },
+ "tamaralempicka": {
+  "name": "Tamara Łempicka",
+  "cat": "m",
+  "img": "-"
+ },
+ "zdzislawbeksinski": {
+  "name": "Zdzisław Beksiński",
+  "cat": "m",
+  "img": "Sanok castle museum"
+ },
+ "koledy": {
+  "name": "Kolędy",
+  "cat": "m",
+  "img": "Szopka krakowska"
+ },
+ "mazowsze": {
+  "name": "Mazowsze",
+  "cat": "m",
+  "img": "Karolin pałac Mazowsze"
+ },
+ "mikolajkopernik": {
+  "name": "Mikołaj Kopernik",
+  "cat": "s",
+  "img": "Frombork Cathedral"
+ },
+ "mariasklodowskacurie": {
+  "name": "Maria Skłodowska-Curie",
+  "cat": "s",
+  "img": "Muzeum Marii Skłodowskiej-Curie Freta Warszawa"
+ },
+ "kazimierzgorski": {
+  "name": "Kazimierz Górski",
+  "cat": "s",
+  "img": "Stadion Śląski Chorzów"
+ },
+ "irenaszewinska": {
+  "name": "Irena Szewińska",
+  "cat": "s",
+  "img": "Memoriał Ireny Szewińskiej Bydgoszcz stadion"
+ },
+ "adammalysz": {
+  "name": "Adam Małysz",
+  "cat": "s",
+  "img": "Skocznia Adama Małysza Wisła Malinka"
+ },
+ "robertkubica": {
+  "name": "Robert Kubica",
+  "cat": "s",
+  "img": "Circuit Gilles Villeneuve Montreal"
+ },
+ "robertlewandowski": {
+  "name": "Robert Lewandowski",
+  "cat": "s",
+  "img": "Stadion Narodowy Warszawa"
+ },
+ "igaswiatek": {
+  "name": "Iga Świątek",
+  "cat": "s",
+  "img": "Court Philippe-Chatrier Roland Garros"
+ },
+ "ignacylukasiewicz": {
+  "name": "Ignacy Łukasiewicz",
+  "cat": "s",
+  "img": "Bóbrka oil museum"
+ },
+ "janheweliusz": {
+  "name": "Jan Heweliusz",
+  "cat": "s",
+  "img": "Hevelius Machina coelestis"
+ },
+ "kazimierzfunk": {
+  "name": "Kazimierz Funk",
+  "cat": "s",
+  "img": "-"
+ },
+ "stefanbanach": {
+  "name": "Stefan Banach",
+  "cat": "s",
+  "img": "Scottish Café Lviv building"
+ },
+ "paweledmundstrzelecki": {
+  "name": "Paweł Edmund Strzelecki",
+  "cat": "s",
+  "img": "Mount Kosciuszko"
+ },
+ "jerzykukuczka": {
+  "name": "Jerzy Kukuczka",
+  "cat": "s",
+  "img": "Lhotse south face"
+ },
+ "wandarutkiewicz": {
+  "name": "Wanda Rutkiewicz",
+  "cat": "s",
+  "img": "K2 mountain"
+ },
+ "kamilstoch": {
+  "name": "Kamil Stoch",
+  "cat": "s",
+  "img": "Wielka Krokiew Zakopane"
+ },
+ "justynakowalczyk": {
+  "name": "Justyna Kowalczyk",
+  "cat": "s",
+  "img": "-"
+ },
+ "siatkowka": {
+  "name": "Siatkówka",
+  "cat": "s",
+  "img": "Spodek Katowice"
+ },
+ "zuzel": {
+  "name": "Żużel",
+  "cat": "s",
+  "img": "Speedway Leszno stadium"
+ },
+ "wembley1973": {
+  "name": "Wembley 1973",
+  "cat": "s",
+  "img": "Old Wembley Stadium twin towers"
+ },
+ "wawel": {
+  "name": "Wawel",
+  "cat": "h",
+  "img": "Wawel Castle Kraków"
+ },
+ "jasnagora": {
+  "name": "Jasna Góra",
+  "cat": "h",
+  "img": "Jasna Góra monastery Częstochowa"
+ },
+ "malbork": {
+  "name": "Malbork",
+  "cat": "h",
+  "img": "Malbork Castle"
+ },
+ "wieliczka": {
+  "name": "Wieliczka",
+  "cat": "h",
+  "img": "Kaplica św. Kingi Wieliczka"
+ },
+ "puszczabialowieska": {
+  "name": "Puszcza Białowieska",
+  "cat": "h",
+  "img": "European bison Białowieża Forest"
+ },
+ "auschwitzbirkenau": {
+  "name": "Auschwitz-Birkenau",
+  "cat": "h",
+  "img": "Auschwitz II Birkenau gate"
+ },
+ "westerplatte": {
+  "name": "Westerplatte",
+  "cat": "h",
+  "img": "Westerplatte Monument"
+ },
+ "stoczniagdanska": {
+  "name": "Stocznia Gdańska",
+  "cat": "h",
+  "img": "Pomnik Poległych Stoczniowców Gdańsk"
+ },
+ "zamekkrolewskiwwarszawie": {
+  "name": "Zamek Królewski w Warszawie",
+  "cat": "h",
+  "img": "Royal Castle Warsaw Castle Square"
+ },
+ "orzelbialy": {
+  "name": "Orzeł Biały",
+  "cat": "h",
+  "img": "File:Herb Polski.svg"
+ },
+ "mazurekdabrowskiego": {
+  "name": "Mazurek Dąbrowskiego",
+  "cat": "h",
+  "img": "Mazurek Dąbrowskiego rękopis Wybickiego"
+ },
+ "hejnalmariacki": {
+  "name": "Hejnał mariacki",
+  "cat": "h",
+  "img": "St. Mary's Basilica Kraków towers"
+ },
+ "syrenkawarszawska": {
+  "name": "Syrenka Warszawska",
+  "cat": "h",
+  "img": "Syrenka Rynek Starego Miasta Warszawa"
+ },
+ "smokwawelski": {
+  "name": "Smok Wawelski",
+  "cat": "h",
+  "img": "Smocza Jama Kraków"
+ },
+ "wisla": {
+  "name": "Wisła",
+  "cat": "h",
+  "img": "Vistula river Warsaw sandbanks"
+ },
+ "rynekglownyisukiennice": {
+  "name": "Rynek Główny i Sukiennice",
+  "cat": "h",
+  "img": "Sukiennice Kraków"
+ },
+ "kazimierz": {
+  "name": "Kazimierz",
+  "cat": "h",
+  "img": "Szeroka street Kazimierz Kraków"
+ },
+ "zakopaneigiewont": {
+  "name": "Zakopane i Giewont",
+  "cat": "h",
+  "img": "Giewont Tatra"
+ },
+ "morskieoko": {
+  "name": "Morskie Oko",
+  "cat": "h",
+  "img": "Morskie Oko lake"
+ },
+ "gdansk": {
+  "name": "Gdańsk",
+  "cat": "h",
+  "img": "Żuraw Gdańsk Motława"
+ },
+ "torun": {
+  "name": "Toruń",
+  "cat": "h",
+  "img": "Toruń old town Vistula panorama"
+ },
+ "zamosc": {
+  "name": "Zamość",
+  "cat": "h",
+  "img": "Zamość town hall"
+ },
+ "wroclawskiekrasnale": {
+  "name": "Wrocławskie krasnale",
+  "cat": "h",
+  "img": "Wrocław krasnale"
+ },
+ "poznanskiekoziolki": {
+  "name": "Poznańskie koziołki",
+  "cat": "h",
+  "img": "Poznań town hall goats"
+ },
+ "mazury": {
+  "name": "Mazury",
+  "cat": "h",
+  "img": "Masurian Lake District sailing"
+ },
+ "bieszczady": {
+  "name": "Bieszczady",
+  "cat": "h",
+  "img": "Połonina Wetlińska Bieszczady"
+ },
+ "baltykihel": {
+  "name": "Bałtyk i Hel",
+  "cat": "h",
+  "img": "Molo w Sopocie"
+ },
+ "palackulturyinauki": {
+  "name": "Pałac Kultury i Nauki",
+  "cat": "h",
+  "img": "Palace of Culture and Science Warsaw"
+ },
+ "lazienkikrolewskie": {
+  "name": "Łazienki Królewskie",
+  "cat": "h",
+  "img": "Pałac na Wyspie Łazienki"
+ },
+ "bialoczerwona": {
+  "name": "Biało-czerwona",
+  "cat": "h",
+  "img": "File:Flag of Poland.svg"
+ },
+ "bursztyn": {
+  "name": "Bursztyn",
+  "cat": "h",
+  "img": "Baltic amber insect inclusion"
+ },
+ "bocian": {
+  "name": "Bocian",
+  "cat": "h",
+  "img": "White stork nest Poland"
+ },
+ "wigilia": {
+  "name": "Wigilia",
+  "cat": "u",
+  "img": "Opłatek wigilijny"
+ },
+ "wszystkichswietych": {
+  "name": "Wszystkich Świętych",
+  "cat": "u",
+  "img": "Cmentarz Powązkowski znicze noc"
+ },
+ "tlustyczwartek": {
+  "name": "Tłusty czwartek",
+  "cat": "u",
+  "img": "Pączki z różą"
+ },
+ "smigusdyngus": {
+  "name": "Śmigus-dyngus",
+  "cat": "u",
+  "img": "Śmigus-dyngus woda"
+ },
+ "andrzejki": {
+  "name": "Andrzejki",
+  "cat": "u",
+  "img": "Lanie wosku andrzejki"
+ },
+ "imieniny": {
+  "name": "Imieniny",
+  "cat": "u",
+  "img": "-"
+ },
+ "bozecialo": {
+  "name": "Boże Ciało",
+  "cat": "u",
+  "img": "Łowicz Boże Ciało procesja"
+ },
+ "swietoniepodleglosci": {
+  "name": "Święto Niepodległości",
+  "cat": "u",
+  "img": "Rogal świętomarciński"
+ },
+ "studniowka": {
+  "name": "Studniówka",
+  "cat": "u",
+  "img": "-"
+ },
+ "dozynki": {
+  "name": "Dożynki",
+  "cat": "u",
+  "img": "Wieniec dożynkowy"
+ },
+ "stolat": {
+  "name": "Sto lat",
+  "cat": "u",
+  "img": "-"
+ },
+ "pierogi": {
+  "name": "Pierogi",
+  "cat": "u",
+  "img": "Pierogi ruskie"
+ },
+ "bigos": {
+  "name": "Bigos",
+  "cat": "u",
+  "img": "Bigos"
+ },
+ "zurek": {
+  "name": "Żurek",
+  "cat": "u",
+  "img": "Żurek w chlebie"
+ },
+ "wielkanociswieconka": {
+  "name": "Wielkanoc i święconka",
+  "cat": "u",
+  "img": "Święconka koszyk"
+ },
+ "pisanki": {
+  "name": "Pisanki",
+  "cat": "u",
+  "img": "Pisanki"
+ },
+ "mikolajki": {
+  "name": "Mikołajki",
+  "cat": "u",
+  "img": "Święty Mikołaj ikona"
+ },
+ "topieniemarzanny": {
+  "name": "Topienie Marzanny",
+  "cat": "u",
+  "img": "Topienie Marzanny"
+ },
+ "nockupaly": {
+  "name": "Noc Kupały",
+  "cat": "u",
+  "img": "Wianki Kupała wreaths river"
+ },
+ "rosol": {
+  "name": "Rosół",
+  "cat": "u",
+  "img": "Rosół z makaronem"
+ },
+ "barszczzuszkami": {
+  "name": "Barszcz z uszkami",
+  "cat": "u",
+  "img": "Barszcz czerwony z uszkami"
+ },
+ "golabki": {
+  "name": "Gołąbki",
+  "cat": "u",
+  "img": "Gołąbki"
+ },
+ "kotletschabowy": {
+  "name": "Kotlet schabowy",
+  "cat": "u",
+  "img": "Kotlet schabowy z ziemniakami"
+ },
+ "oscypek": {
+  "name": "Oscypek",
+  "cat": "u",
+  "img": "Oscypek"
+ },
+ "obwarzanek": {
+  "name": "Obwarzanek",
+  "cat": "u",
+  "img": "Obwarzanek krakowski"
+ },
+ "sernik": {
+  "name": "Sernik",
+  "cat": "u",
+  "img": "Sernik krakowski"
+ },
+ "makowiec": {
+  "name": "Makowiec",
+  "cat": "u",
+  "img": "Makowiec"
+ },
+ "barmleczny": {
+  "name": "Bar mleczny",
+  "cat": "u",
+  "img": "Bar mleczny Prasowy Warszawa"
+ },
+ "kiszonki": {
+  "name": "Kiszonki",
+  "cat": "u",
+  "img": "Ogórki kiszone słoik"
+ },
+ "wodka": {
+  "name": "Wódka",
+  "cat": "u",
+  "img": "Muzeum Polskiej Wódki Koneser"
+ },
+ "ludwikwegierski": {
+  "name": "Ludwik Węgierski",
+  "cat": "k",
+  "img": "Košice St Elisabeth Cathedral"
+ },
+ "swietajadwiga": {
+  "name": "Święta Jadwiga",
+  "cat": "k",
+  "img": "Wawel Cathedral sarcophagus of Queen Jadwiga"
+ },
+ "wladyslawwarnenczyk": {
+  "name": "Władysław Warneńczyk",
+  "cat": "k",
+  "img": "Varna Wladyslaw Warnenchik Park Museum"
+ },
+ "swietakinga": {
+  "name": "Święta Kinga",
+  "cat": "k",
+  "img": "Klasztor Klarysek Stary Sącz"
+ },
+ "elzbietalokietkowna": {
+  "name": "Elżbieta Łokietkówna",
+  "cat": "k",
+  "img": "Visegrád royal palace"
+ },
+ "henrykslawik": {
+  "name": "Henryk Sławik",
+  "cat": "k",
+  "img": "-"
+ },
+ "rok1956": {
+  "name": "Rok 1956",
+  "cat": "k",
+  "img": "Memorial of the 1956 Revolution Budapest"
+ },
+ "dzienprzyjaznipolskowegierskiej": {
+  "name": "Dzień Przyjaźni Polsko-Węgierskiej",
+  "cat": "k",
+  "img": "-"
+ },
+ "polakwegierdwabratanki": {
+  "name": "Polak, Węgier, dwa bratanki",
+  "cat": "k",
+  "img": "Karabela szabla"
+ },
+ "swietywladyslaw": {
+  "name": "Święty Władysław",
+  "cat": "k",
+  "img": "Szent László herma Győr"
+ },
+ "jagiellonowienawegrzech": {
+  "name": "Jagiellonowie na Węgrzech",
+  "cat": "k",
+  "img": "Mohács memorial park"
+ },
+ "uchodzcy1939": {
+  "name": "Uchodźcy 1939",
+  "cat": "k",
+  "img": "Balatonboglár"
+ },
+ "wegrzyn": {
+  "name": "Węgrzyn",
+  "cat": "k",
+  "img": "Tokaj vineyards"
+ },
+ "wspolnagranica": {
+  "name": "Wspólna granica",
+  "cat": "k",
+  "img": "Przełęcz Dukielska"
+ }
+}
