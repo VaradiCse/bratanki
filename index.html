@@ -2103,16 +2103,34 @@ function gPlace() {
   else { var z = zPrep(F[1][0]); q = z + ' ___'; a = F[1]; hu = 'Honnan? («wracam» …)'; x = 'Honnan? «z» + dopełniacz: «' + z + ' ' + F[1][0] + '»'; }
   return { t: 'in', q: '«' + q + '»', h: '«' + n.l + '» (' + n.h + ') · ' + hu, a: a, x: x };
 }
+/* v15.1: a „Hogy hangzik magyar füllel?” átírás-választó helyett hallás utáni feladat:
+   meghallod a szót, és a hasonló írású valódi lengyel szavak közül kell kiválasztani. */
+function pronKey(w) {
+  return w.toLowerCase().replace(/sz/g, 's').replace(/cz/g, 'c').replace(/rz/g, 'z').replace(/ch/g, 'h').replace(/dz/g, 'z')
+    .replace(/[śšs]/g, 's').replace(/[ćc]/g, 'c').replace(/[źżz]/g, 'z').replace(/ń/g, 'n').replace(/ł/g, 'l').replace(/ó/g, 'u')
+    .replace(/ą/g, 'a').replace(/ę/g, 'e').replace(/y/g, 'i').replace(/w/g, 'v');
+}
+function pronDist(a, b) {
+  if (Math.abs(a.length - b.length) > 2) return 9;
+  var d = [], i, j;
+  for (i = 0; i <= a.length; i++) { d[i] = [i]; }
+  for (j = 1; j <= b.length; j++) d[0][j] = j;
+  for (i = 1; i <= a.length; i++) for (j = 1; j <= b.length; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return d[a.length][b.length];
+}
+var PRON_POOL = null;
 function gPron(w) {
-  var c = HU.resp(w).txt;
-  var vs = uniq([HU.resp(w, { hu: 1 }).txt, HU.resp(w, { nodev: 1 }).txt, HU.resp(w, { first: 1 }).txt, HU.resp(w, { nonas: 1 }).txt, HU.resp(w, { hu: 1, first: 1 }).txt, HU.resp(w, { nodev: 1, first: 1 }).txt]).filter(function (v) { return v !== c; });
-  if (vs.length < 2) return null;
-  var why = [];
-  if (HU.resp(w, { nodev: 1 }).txt !== c) why.push('zöngésségi hasonulás vagy szóvégi zöngétlenedés');
-  if (HU.resp(w, { nonas: 1 }).txt !== c) why.push('orrhang-szabály');
-  if (HU.resp(w, { first: 1 }).txt !== c) why.push('hangsúly nem az első szótagon');
-  if (HU.resp(w, { hu: 1 }).txt !== c) why.push('lengyel betűérték (s = sz, sz = s, ł = w, a = rövid á)');
-  return { t: 'mc', task: 'Hogy hangzik magyar füllel?', q: '«' + w + '»', o: [c].concat(vs.slice(0, 3)), x: 'Amire itt figyelni kell: ' + why.join('; ') + '.', say: w };
+  if (!hasAudio() || !canSay(w)) return null;
+  if (!PRON_POOL) PRON_POOL = pronPool().map(function (x) { return [x, pronKey(x)]; });
+  var k = pronKey(w), near = [];
+  PRON_POOL.forEach(function (p) { if (p[0] === w || p[0].toLowerCase() === w.toLowerCase()) return; var d = pronDist(k, p[1]); if (d <= 2) near.push([p[0], d]); });
+  if (near.length < 3) return null;
+  near = shuffle(near).sort(function (x, y) { return x[1] - y[1]; });
+  var o = [], seen = {}; seen[w.toLowerCase()] = 1;
+  near.some(function (n) { var l = n[0].toLowerCase(); if (!seen[l]) { seen[l] = 1; o.push('«' + n[0] + '»'); } return o.length >= 3; });
+  if (o.length < 3) return null;
+  var m = WORDS[w] ? WORDS[w][1] : '';
+  return { t: 'he', q: '', o: ['«' + w + '»'].concat(o), say: w, x: '«' + w + '»' + (m ? ' = ' + m : '') + '.' };
 }
 function pronPool() {
   var o = [];
@@ -2132,7 +2150,7 @@ var GEN = {
   pron: function () { var e = null, n = 0, pool = pronPool(); while (!e && n++ < 40) e = gPron(pick(pool)); return e; }, stress: gStress
 };
 var GEN_LAB = { gen: 'Birtokos eset (dopełniacz)', acc: 'Tárgyeset (biernik)', inst: 'Eszközhatározó (narzędnik)', loc: 'Helyhatározó (miejscownik)', dat: 'Részes eset (celownik)', adj: 'Melléknév + főnév együtt', place: 'Honnan – hol – hová',
-  pres: 'Jelen idő', past: 'Múlt idő', fut: 'Jövő idő', imp: 'Felszólító mód', cond: 'Feltételes mód', asp: 'Aspektuspárok', num: 'Számnév + főnév', pron: 'Kiejtés: magyar füllel', stress: 'Hangsúlyvadászat' };
+  pres: 'Jelen idő', past: 'Múlt idő', fut: 'Jövő idő', imp: 'Felszólító mód', cond: 'Feltételes mód', asp: 'Aspektuspárok', num: 'Számnév + főnév', pron: 'Kiejtés: melyiket hallod?', stress: 'Hangsúlyvadászat' };
 function drill(kinds, n, mc) {
   var out = [], guard = 0;
   while (out.length < n && guard++ < n * 6) { var e = GEN[pick(kinds)](mc); if (e) out.push(e); }
@@ -2299,7 +2317,7 @@ ROUTES.labor = function () {
   var h = topBar('Kiejtés-labor', 'Lengyel hangok magyar füllel', 'edzes') + '<div class="stack">';
   h += '<section class="card key"><div class="eyebrow">Átíró</div><p class="small muted" style="margin:6px 0 10px">Írj vagy másolj be lengyel szöveget. A piros szótag a hangsúlyos; az á mindig rövid.</p><input class="inp" id="lab-in" lang="pl" value="Dzień dobry, jestem z Węgier." autocomplete="off" autocapitalize="off" spellcheck="false">' + keysHtml()
     + '<div class="resp" id="lab-out" style="font-size:19px;margin-top:12px;line-height:1.5"></div><div class="row" style="margin-top:12px"><button class="btn sm aud" data-a="labsay">' + I.play + 'Hallgasd</button><button class="btn sm alt aud" data-a="labsay" data-slow="1">Lassan</button></div></section>';
-  h += '<section class="card"><div class="eyebrow">Kvízek</div><div class="col" style="margin-top:10px"><button class="btn wide" data-a="labq" data-k="pron">Magyar füllel · 10 szó</button><button class="btn wide alt" data-a="labq" data-k="stress">Hangsúlyvadászat · 10 szó</button>'
+  h += '<section class="card"><div class="eyebrow">Kvízek</div><div class="col" style="margin-top:10px"><button class="btn wide aud" data-a="labq" data-k="pron">Melyiket hallod? · 10 szó</button><button class="btn wide alt" data-a="labq" data-k="stress">Hangsúlyvadászat · 10 szó</button>'
     + '<button class="btn wide alt aud" data-a="labq" data-k="minp">Minimális párok hallás után</button><button class="btn wide alt aud" data-a="labq" data-k="dict">Diktálás · 8 szó</button><button class="btn wide alt aud" data-a="labq" data-k="dict2">Diktálás · 6 mondat az olvasmányokból</button></div>'
     + (hasAudio() ? '' : '<p class="tiny muted" style="margin-top:10px">A hallás utáni feladatokhoz lengyel beszédhang kell az eszközön. Részletek a Beállításokban.</p>') + '</section>';
   h += '<section class="card"><div class="eyebrow">Hangtérkép</div><div class="tw"><table class="soundmap"><thead><tr><th>Betű</th><th>Magyarul</th><th>Példa és mankó</th></tr></thead><tbody>' + SOUNDS.map(function (s) { return '<tr><td>' + s[0] + '</td><td>' + s[1] + '</td><td>' + fmt(s[2]) + '</td></tr>'; }).join('') + '</tbody></table></div></section>';
@@ -5732,7 +5750,7 @@ function kapTrapView() {
   return '<section class="card key"><h3>Magyar fejjel</h3><p class="small" style="margin-top:6px">A csapdák, amelyekbe a magyar anyanyelvű tanuló szinte biztosan belelép: a fordítva bekötött betűk, a hangsúly, a számnév utáni alak, a „szeret” három arca. Néhol a magyar segít is: a kettős tagadás és a magázás ugyanúgy működik.</p></section>'
     + '<section class="stage"><div class="stage-h"><h3>Nyelvtan és szóhasználat</h3></div><div class="items">' + row('h1') + '</div></section>'
     + '<section class="stage"><div class="stage-h"><h3>Kiejtés és helyesírás</h3></div><div class="items">' + ['k1', 'k2', 'k3', 'k4'].map(row).join('') + '</div></section>'
-    + '<section class="card"><h3>Gyors kvízek</h3><div class="col" style="margin-top:10px"><button class="btn wide alt" data-a="labq" data-k="pron">Magyar füllel · 10 szó</button>'
+    + '<section class="card"><h3>Gyors kvízek</h3><div class="col" style="margin-top:10px"><button class="btn wide alt aud" data-a="labq" data-k="pron">Melyiket hallod? · 10 szó</button>'
     + '<button class="btn wide alt aud" data-a="labq" data-k="minp">Minimális párok hallás után</button><button class="btn wide alt" data-a="kapgo" data-k="h">Hamis barátok · 10 csapda</button></div>'
     + (hasAudio() ? '' : '<p class="tiny muted" style="margin-top:10px">A hallás utáni kvízhez lengyel hang kell az eszközön.</p>') + '</section>';
 }
