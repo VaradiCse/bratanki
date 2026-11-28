@@ -996,6 +996,81 @@ a.nyk-row b{display:block;font-family:var(--f-pl);font-size:17px}
 .nyk-ref .textlink{display:block;margin-top:6px;text-align:left}
 .nyk .tw{overflow-x:auto}
 .nyk table{font-size:13.5px}.nyk th,.nyk td{padding-left:5px;padding-right:5px}
+/* ===== v16.10: kezelhetőség ===== */
+/* napi idő a menetrend alján */
+.nlen{display:flex;align-items:center;gap:8px;padding:0 16px 14px;font-size:13.5px;color:var(--board-mute)}
+.nlen>span:first-child{flex:1}
+.nlen-b{display:inline-flex;border:1px solid var(--board-line);border-radius:9px;overflow:hidden}
+.nlen-b button{min-width:42px;min-height:34px;padding:0 8px;border:0;background:transparent;color:var(--board-ink);font:600 14px var(--f-ui);font-variant-numeric:tabular-nums}
+.nlen-b button+button{border-left:1px solid var(--board-line)}
+.nlen-b button[aria-pressed="true"]{background:var(--gold);color:var(--gold-ink)}
+.nlen-b button:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.board-end+.nlen{padding-top:0}
+/* Edzés: következő lépés, ajánlott eszközök, összecsukható lista */
+.cards-hero .ch-n.ok{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--good-soft);color:var(--good)}
+.cards-hero .ch-n.ok svg{width:28px;height:28px}
+.cards-hero .small .plq{font-family:var(--f-pl);font-style:normal;color:var(--pl)}
+.recs{margin-top:18px}
+.rec-h{margin:0 4px 8px;font:600 19px/1.2 var(--f-pl)}
+.rec-l{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.rec{display:flex;flex-direction:column;gap:4px;min-height:118px;padding:12px 10px;border-radius:var(--rc);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);color:inherit;text-decoration:none}
+.rec:active{transform:translateY(1px)}
+.rec-i svg{width:22px;height:22px;color:var(--indigo)}
+.rec b{font-size:15px;line-height:1.2}
+.rec small{font-size:12.5px;line-height:1.3;color:var(--muted)}
+.alltools{margin-top:16px}
+.alltools>summary{list-style:none;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 10px;padding:13px 16px;border-radius:var(--rc);background:var(--soft);cursor:pointer}
+.alltools>summary::-webkit-details-marker{display:none}
+.alltools>summary span{font:600 18px/1.2 var(--f-pl)}
+.alltools>summary small{grid-column:1;font-size:13px;color:var(--muted)}
+.alltools>summary::after{content:"";grid-row:1/3;grid-column:2;width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg) translateY(-3px);transition:transform .2s}
+.alltools[open]>summary::after{transform:rotate(-135deg) translateY(-2px)}
+.alltools>summary:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+/* Kánon: kategóriák egy görgethető sorban, napi tétel */
+#kn-chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:2px 16px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+#kn-chips::-webkit-scrollbar{display:none}
+#kn-chips .chip{flex:none;white-space:nowrap}
+.card.knday{display:flex;gap:13px;align-items:flex-start;text-decoration:none;color:inherit}
+.knday .eyebrow{display:block;margin-bottom:2px}
+.kn-swhint{text-align:center;margin-top:-2px}
+/* Útlevél */
+.card.passline{display:flex;align-items:center;gap:12px;margin-top:12px;text-decoration:none;color:inherit}
+.passline .pl-i{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:#6E1423;color:#E9C977;flex:none}
+.passline .pl-i svg{width:24px;height:24px}
+.passline b{display:block;font-size:17px;line-height:1.2}
+.passline .small{display:block}
+.pass-cover{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:14px;padding:30px 20px 26px;border-radius:18px;background:linear-gradient(160deg,#7A1828,#5C0F1D);color:#E9C977;text-align:center;box-shadow:0 14px 30px -20px rgba(92,15,29,.8)}
+.pass-cover .pc-mark svg{width:46px;height:46px}
+.pass-cover .pc-t{font:600 30px/1.1 var(--f-pl);letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
+.pass-cover .pc-s{font-size:14px;opacity:.8}
+.pass-cover .pc-n{margin-top:12px;font-size:14.5px;color:#F6E7BE;max-width:30ch}
+.pass-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;padding:14px;border-radius:18px;border:1px solid var(--line);background:var(--card) repeating-linear-gradient(135deg,transparent 0 11px,rgba(110,20,35,.035) 11px 12px)}
+.pass-slot{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:156px;padding:10px;border:1.5px dashed var(--line);border-radius:14px;background:transparent;color:var(--muted);text-align:center;font:inherit;cursor:pointer}
+.pass-slot.done{border-color:transparent;cursor:default}
+.pass-slot .ps-k{font-size:12px}
+.pass-slot .ps-n{font:600 17px/1.2 var(--f-pl);color:var(--ink);opacity:.6}
+.pass-slot .ps-p{font-size:12.5px;font-variant-numeric:tabular-nums}
+.stamp{position:relative;width:132px;height:132px;border-radius:50%;border:3px double currentColor;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:10px;opacity:.9}
+.stamp::before{content:"";position:absolute;inset:7px;border-radius:50%;border:1px solid currentColor;opacity:.55}
+.stamp .sp-em svg{width:30px;height:30px}
+.stamp .sp-n{font:700 14.5px/1.1 var(--f-pl);letter-spacing:.05em;text-transform:uppercase;max-width:104px}
+.stamp .sp-d{font-size:11.5px;font-variant-numeric:tabular-nums}
+.stamp .sp-l{font:700 12px/1 var(--f-ui);letter-spacing:.06em}
+.ink-r{color:#B3263A}.ink-g{color:#2F6B45}.ink-b{color:#2E4A8B}
+.ps-ex{display:flex;align-items:center;gap:4px;margin-top:8px;font-size:12px;color:var(--muted)}
+.ps-ex svg{width:14px;height:14px;color:var(--gold)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ink-r{color:#F08A97}:root:not([data-theme="light"]) .ink-g{color:#86D3A2}:root:not([data-theme="light"]) .ink-b{color:#9DB6F2}}
+:root[data-theme="dark"] .ink-r{color:#F08A97}:root[data-theme="dark"] .ink-g{color:#86D3A2}:root[data-theme="dark"] .ink-b{color:#9DB6F2}
+/* első indítás */
+.onb h3{margin:0 0 4px}
+.onb .field{margin-top:14px}
+/* a lebegő gomb görgetés közben félrehúzódik */
+.cta{transition:transform .22s ease,opacity .22s ease}
+#view.cta-off .cta{transform:translateY(120%);opacity:0;pointer-events:none}
+@media (prefers-reduced-motion: reduce){.cta,.alltools>summary::after{transition:none}}
+/* a koppintható lengyel szavak jelölése halkabb */
+.pl{border-bottom-color:rgba(160,30,50,.4)}
+@supports (color:color-mix(in srgb,red,blue)){.pl{border-bottom-color:color-mix(in srgb,currentColor 38%,transparent)}}
 
 </style>
 </head>
@@ -1232,7 +1307,7 @@ var cur = 'ma';
 
 function defaults() {
   return { v: 1, t: 0, xp: 0, days: {}, goal: 30, done: {}, srs: {}, miss: [], seen: {}, lvl: 'A1', own: [], ownx: {}, rec: {}, q: {}, bad: {}, kn: {}, exam: {}, oe: {}, story: {}, storyc: {}, tp: {}, vh: {}, ut: {}, vzs: {}, day: null,
-    set: { audio: 'auto', resp: 1, auto: 1, g: 'm', type: 0, snd: 1, fast: 1 } };
+    set: { audio: 'auto', resp: 1, auto: 1, g: 'm', type: 0, snd: 1, fast: 1, napi: 60, vib: 1, fs: 0 } };
 }
 var S = defaults();
 function loadLocal() {
@@ -1494,7 +1569,7 @@ function route() {
 }
 function go(h) { if (location.hash === '#' + h) route(); else location.hash = h; }
 function setTabs() {
-  var map = { ma: 'ma', ut: 'ut', lecke: 'ut', edzes: 'edzes', labor: 'edzes', olvaso: 'olvaso', szolasok: 'olvaso', tanar: 'tanar', szotar: 'edzes', slowko: 'edzes', sajat: 'olvaso', szoveg: 'olvaso', tarsoly: 'ma', meres: 'ma', felfedezo: 'edzes', hallas: 'edzes', valodi: 'edzes', utana: 'edzes', kapocs: 'edzes', ragozo: 'edzes', hallgat: 'edzes', kanon: 'olvaso', kn: 'olvaso', nyelvtan: 'edzes', nyk: 'edzes', iras: 'tanar', vizsga: 'edzes', beszed: 'edzes', tortenet: 'olvaso', hibaim: 'edzes' };
+  var map = { ma: 'ma', ut: 'ut', lecke: 'ut', edzes: 'edzes', labor: 'edzes', olvaso: 'olvaso', szolasok: 'olvaso', tanar: 'tanar', szotar: 'edzes', slowko: 'edzes', sajat: 'olvaso', szoveg: 'olvaso', tarsoly: 'ma', meres: 'ma', felfedezo: 'edzes', hallas: 'edzes', valodi: 'edzes', utana: 'edzes', kapocs: 'edzes', ragozo: 'edzes', hallgat: 'edzes', kanon: 'olvaso', kn: 'olvaso', nyelvtan: 'edzes', nyk: 'edzes', iras: 'tanar', vizsga: 'edzes', beszed: 'edzes', tortenet: 'olvaso', hibaim: 'edzes', utlevel: 'ut' };
   var a = document.querySelectorAll('#tabs a');
   for (var i = 0; i < a.length; i++) {
     if (a[i].getAttribute('href') === '#' + ((cur === 'lecke' && TABOV) || map[cur] || '')) a[i].setAttribute('aria-current', 'page'); else a[i].removeAttribute('aria-current');
@@ -2609,7 +2684,10 @@ function seg(key, opts, curv) { return '<div class="seg">' + opts.map(function (
 ROUTES.beallitasok = function () {
   var m = audioMode(), st = audOn() ? 'Most a beépített felvételek szólnak; amihez nincs felvétel, ott ' + (m === 'dev' ? 'az eszköz hangja.' : m === 'claude' ? 'Claude hangja.' : 'nincs hang.') : m === 'dev' ? 'Most az eszköz lengyel hangja szól' + (AU.voice ? ' (' + esc(AU.voice.name) + ')' : '') + '.' : m === 'claude' ? 'Most Claude hangja szól.' : 'Most nincs elérhető lengyel hang.';
   var h = topBar('Beállítások', '', 'ma') + '<div class="stack">';
-  h += '<section class="card key col"><div class="eyebrow">Napi cél</div>' + seg('goal', [[15, '15 korty'], [30, '30 korty'], [50, '50 korty'], [80, '80 korty']], S.goal) + '<p class="tiny muted">Egy korty egy elsőre jó válasz. 30 korty nagyjából tíz perc.</p></section>';
+  h += '<section class="card key col"><div class="eyebrow">Napi idő</div>' + seg('napi', [[15, '15 perc'], [30, '30 perc'], [60, '60 perc']], napiLen()) + '<p class="tiny muted">A Ma lap menetrendje: 15 percnél ismétlés és új anyag, 30 percnél még egy naponta váltakozó blokk (hallás, olvasás, beszéd vagy a történet), 60 percnél mind a hat.</p>'
+    + '<div class="field"><span class="lab">Napi cél kortyban</span>' + seg('goal', [[15, '15 korty'], [30, '30 korty'], [50, '50 korty'], [80, '80 korty']], S.goal) + '<p class="tiny muted">Egy korty egy elsőre jó válasz. 30 korty nagyjából tíz perc.</p></div></section>';
+  h += '<section class="card col"><div class="eyebrow">Megjelenés</div><div class="field"><span class="lab">Betűméret</span>' + seg('fs', [[0, 'Normál'], [1, 'Nagy'], [2, 'Nagyon nagy']], S.set.fs || 0) + '</div>'
+    + '<div class="field"><span class="lab">Rezgés jó és rossz válasznál</span>' + seg('vib', [[1, 'Be'], [0, 'Ki']], S.set.vib) + '<p class="tiny muted">' + (navigator.vibrate ? 'Androidon működik.' : 'Ez a böngésző nem enged rezgést (iPhone-on ez a szokásos).') + '</p></div></section>';
   h += '<section class="card col"><div class="eyebrow">Hogyan beszélsz magadról?</div>' + seg('g', [['m', 'byłem (férfi)'], ['f', 'byłam (nő)']], S.set.g) + '<p class="tiny muted">A lengyel múlt idő a beszélő nemét is jelöli. Az MI-tanár ehhez igazodik; a feladatok mindkét alakot gyakoroltatják.</p></section>';
   h += '<section class="card col"><div class="eyebrow">Hang</div>' + seg('audio', [['auto', 'Beépített'], ['dev', 'Eszköz'], ['claude', 'Claude'], ['off', 'Ki']], S.set.audio)
     + '<p class="small">' + st + '</p><p class="tiny muted">Eszköz lengyel hangja: ' + (AU.dev ? 'van' : 'nincs') + ' · Claude-hang: ' + (AU.tts ? 'van' : 'ebben a nézetben nincs') + ' · Beépített felvétel: ' + (AUD.ix ? 'van, kb. 14 000 szó és mondat' : 'nem töltődött be') + '.</p>' + more('A beépített hangról', '<p class="tiny muted">Gépi felolvasás (Piper, két lengyel neurális hang, egy női és egy férfi), előre elkészítve, ezért a telefonos Claude alkalmazásban is szól. Minden szókártya, lecke, olvasmány, a történet és a vizsga hallásanyaga megvan; a szabadon írt szöveghez és a Tanár válaszaihoz nincs. Egy-egy pakk néhány száz kilobájt, csak akkor töltődik le, amikor meghallgatod. Gépi hang: tiszta, de nem anyanyelvi színész, a hangsúly néha csúszik.</p>')
@@ -2634,7 +2712,7 @@ ROUTES.beallitasok = function () {
 ACT.set = function (a) {
   var k = a.getAttribute('data-k'), v = a.getAttribute('data-v');
   if (k === 'goal') S.goal = +v; else if (k === 'g' || k === 'audio') S.set[k] = v; else S.set[k] = +v;
-  touch(); audioChanged();
+  touch(); audioChanged(); if (k === 'fs' && typeof fsApply === 'function') fsApply();
   if (cur === 'beallitasok') { var y = view.scrollTop; ROUTES.beallitasok(); view.scrollTop = y; }
 };
 ACT.reset = function () { el('reset-x').innerHTML = '<p class="small" style="color:var(--karm)">Biztos? Minden megtanult szó, lecke és korty elvész, ezen az eszközön és a fiókodban is.</p><div class="row"><button class="btn sm" style="background:var(--karm);border-color:var(--karm)" data-a="reset2">Igen, törlöm</button><button class="btn sm quiet" data-a="go" data-h="beallitasok">Mégsem</button></div>'; };
@@ -2808,7 +2886,7 @@ ACT.szfold = function (a) { var g = a.getAttribute('data-g'); SZ_OPEN[g] = SZ_OP
 function deckList(f) { return Object.keys(DECKS).filter(function (k) { var d = DECKS[k]; return !d.own && (!!d.f === f); }).map(function (k) { return DECKS[k]; }); }
 ROUTES.szotar = function () {
   var all = Object.keys(WORDS).length, fq = deckList(true), pd = deckList(false);
-  var h = topBar('Szókincstár', learnedCount() + ' szót tanulsz a ' + all + '-ből', 'edzes') + '<div class="stack">';
+  var h = topBar('Szókincstár', learnedCount() ? learnedCount() + ' szót tanulsz a ' + all + '-ből' : all + ' szó · a leckék és a kártyák töltik fel', 'edzes') + '<div class="stack">';
   h += '<section class="card key"><div class="eyebrow">Saját szótár · ' + S.own.length + ' szó</div><p class="small muted" style="margin:6px 0 10px">Amit olvasás közben felveszel, ide kerül. Kézzel is írhatsz bele.</p>'
     + '<div class="row" style="gap:8px"><input class="inp grow" id="ow-pl" lang="pl" placeholder="lengyelül" autocapitalize="off" autocomplete="off" spellcheck="false" style="min-width:0"><input class="inp grow" id="ow-hu" placeholder="magyarul" autocomplete="off" style="min-width:0;font:400 17px/1.3 var(--f-ui)"></div>' + keysHtml()
     + '<div class="row" style="margin-top:12px"><button class="btn grow" data-a="ownman">Felvesz</button>' + (S.own.length ? '<a class="btn alt grow" href="#lecke-own">Megnyitás</a>' : '') + '</div></section>';
@@ -3058,6 +3136,8 @@ function badgeList() {
     ['olv', 'Olvasó', 'Tíz elolvasott saját szöveg', (r.rd || 0) >= 10],
     ['gyujt', 'Szógyűjtő', 'Ötven szó a saját szótáradban', (S.own || []).length >= 50],
     ['tars', 'Társalgó', 'Ötven váltás a Tanárral', (r.ai || 0) >= 50],
+    ['hnap', 'Megvan a mai', 'Egy nap, amikor a választott napi adag mind megvolt', (r.dfull || r.d60 || 0) >= 1],
+    ['hnap30', 'Harminc teljes nap', 'Harminc nap, amikor a napi adag mind megvolt', (r.dfull || 0) >= 30],
     ['h60', 'Hatvan perc', 'Egy nap, amikor mind a hat blokk megvolt', (r.d60 || 0) >= 1],
     ['h60x7', 'Hét teljes nap', 'Hét nap, amikor mind a hat blokk megvolt', (r.d60 || 0) >= 7],
     ['tort', 'Kard és pohár', 'A folytatásos történet első évada, mind a tíz rész', typeof stLeft === 'function' && typeof STORY !== 'undefined' && stEps().length > 0 && stLeft(0) === 0],
@@ -5156,7 +5236,7 @@ ACT.tpgo = function (a) {
   startSession({ title: TP[TPK[k]][1], items: items, kind: 'miss', onClose: function () { if (cur === 'hibaim') PARAM.hibaim(k); else route(); } });
 };
 
-/* ================= Mai 60 perc: hat tízperces blokk a Ma lapon =================
+/* ================= Mai menetrend: 15, 30 vagy 60 perc a Ma lapon (60 percnél hat tízperces blokk) =================
    S.day = { d: 'ÉÉÉÉ-HH-NN', c: { rev, new, lis (mp), rd, spk, mono, ai, wr, st, sec (aktív mp) }, full }
    A blokkok a valódi tevékenységből pipálódnak ki; a perc a tényleges aktív idő (látható oldal, 90 mp-en belüli érintés vagy szóló hang). */
 var NAPI = {
@@ -5178,7 +5258,14 @@ function dayObj() {
 function dayBump(k, n) { var c = dayObj().c; c[k] = (c[k] || 0) + (n == null ? 1 : n); touch(); napiCheck(); }
 /* a hatodik blokk: a történet, amíg tart; utána írás (ha van Claude) */
 function napiSix() { return (typeof stLeft === 'function' && stLeft() > 0) || !AI.ok ? 'st' : 'wr'; }
-function napiKeys() { return ['rev', 'new', 'lis', 'rd', 'spk', napiSix()]; }
+/* v16.10: a napi adag hossza választható: 15 perc (ismétlés + új anyag), 30 perc (+ egy naponta váltakozó blokk), 60 perc (mind a hat) */
+function napiLen() { var n = +(S.set && S.set.napi); return n === 15 || n === 30 ? n : 60; }
+function napiKeys() {
+  var L = napiLen();
+  if (L === 15) return ['rev', 'new'];
+  if (L === 30) { var pool = ['lis', 'rd', 'spk', napiSix()]; return ['rev', 'new', pool[dayNum() % pool.length]]; }
+  return ['rev', 'new', 'lis', 'rd', 'spk', napiSix()];
+}
 function napiHasRev() { return dueCards().length > 0 || (typeof oeDueKeys === 'function' && oeDueKeys().length > 0) || unlockedKinds().length > 0 || napiWeak(1).length > 0; }
 /* v13: a leggyengébb témák az elmúlt 30 napból (legalább 8 válasz és 20% hiba), a Hibáim statisztikájából */
 function napiWeak(n) {
@@ -5215,11 +5302,12 @@ function napiNext() { var s = napiState(), ks = napiKeys(); for (var i = 0; i < 
 function napiCount() { var s = napiState(); return napiKeys().filter(function (k) { return napiDone(s[k]); }).length; }
 function napiCheck() {
   var d = dayObj();
-  if (d.full || napiCount() < 6) return;
-  d.full = 1; S.rec.d60 = (S.rec.d60 || 0) + 1; addXp(10); touch();
-  setTimeout(function () { toast('Megvan a mai 60 perc: mind a hat blokk. +10 korty.'); snd('fin'); badgeToast(); }, 900);
+  var n = napiKeys().length, L = napiLen(), bonus = L === 60 ? 10 : L === 30 ? 6 : 4;
+  if (d.full || napiCount() < n) return;
+  d.full = 1; S.rec.dfull = (S.rec.dfull || 0) + 1; if (L === 60) S.rec.d60 = (S.rec.d60 || 0) + 1; addXp(bonus); touch();
+  setTimeout(function () { toast('Megvan a mai ' + L + ' perc' + (L === 60 ? ': mind a hat blokk' : '') + '. +' + bonus + ' korty.'); snd('fin'); badgeToast(); }, 900);
 }
-function napiMin() { return Math.min(60, Math.floor((dayObj().c.sec || 0) / 60)); }
+function napiMin() { return Math.floor((dayObj().c.sec || 0) / 60); }
 /* a blokk alcíme: mi a dolog vele most */
 function napiSub(k, st) {
   var c = dayObj().c;
@@ -5248,8 +5336,10 @@ function napiCard() {
     return '<button class="nb dep' + (st >= 2 ? ' ok' : st === 1 ? ' half' : '') + (st === 3 ? ' skip' : '') + (k === nx ? ' nx' : '') + '" data-a="napi" data-k="' + k + '"><span class="dp-n">' + (i + 1) + '</span><span class="dp-t"><b>' + nm[0] + '</b><small>' + (what ? what + (sub && !/^\d+\. állomás$/.test(sub) && k !== 'st' ? ' · ' + sub : '') : sub) + '</small></span>' + stat + '</button>';
   }).join('');
   var weak = napiWeak(2), wh = weak.length && s.rev < 2 ? '<p class="board-note">Az Ismétlésbe ma ezekből is kerül feladat, mert itt hibázol a legtöbbet: ' + weak.map(function (r) { return '<a href="#hibaim-' + r.k + '">' + esc(r.t.toLowerCase()) + '</a> (' + tpPct(r.rate) + '%)'; }).join(', ') + '.</p>' : '';
-  return '<section class="board napi" aria-label="A mai adag"><div class="board-h"><h3>Mai menetrend</h3><span>' + done + ' / 6 · ' + min + ' / 60 perc</span></div>' + rows + wh
-    + (nx ? '<button class="board-go" data-a="napi" data-k="' + nx + '">Indulás: ' + NAPI[nx][0] + '</button>' : '<p class="board-end">' + I.check + ' Mind a hat megvan. Ami most jön, ráadás.</p>') + '</section>';
+  var L = napiLen(), lens = [15, 30, 60].map(function (v) { return '<button data-a="napilen" data-v="' + v + '" aria-pressed="' + (v === L) + '">' + v + '</button>'; }).join('');
+  return '<section class="board napi" aria-label="A mai adag"><div class="board-h"><h3>Mai menetrend</h3><span>' + done + ' / ' + ks.length + ' kész</span></div>' + rows + wh
+    + (nx ? '<button class="board-go" data-a="napi" data-k="' + nx + '">Indulás: ' + NAPI[nx][0] + '</button>' : '<p class="board-end">' + I.check + ' ' + (ks.length === 6 ? 'Mind a hat megvan.' : 'A mai adag megvan.') + ' Ami most jön, ráadás.</p>')
+    + '<div class="nlen"><span>' + (min ? 'Ma ' + min + ' perc aktív' : 'Napi idő') + '</span><span class="nlen-b" role="group" aria-label="Napi idő percben">' + lens + '</span><span>perc</span></div></section>';
 }
 /* az Út jegye: a mostani állomás, a leckék sínje */
 function stationTicket() {
@@ -5284,6 +5374,7 @@ function napiGo(k) {
   if (k === 'wr') { TC.tab = 'write'; go('tanar'); return; }
 }
 ACT.napi = function (a) { napiGo(a.getAttribute('data-k')); };
+ACT.napilen = function (a) { S.set.napi = +a.getAttribute('data-v'); touch(); if (cur === 'ma') { var y = view.scrollTop; ROUTES.ma(); view.scrollTop = y; } };
 /* a kör vége: melyik blokkba számít */
 function dayFromSession(o) {
   var k = o.kind;
@@ -5623,7 +5714,7 @@ function stStat(st) { var its = st.items.map(itemById).filter(Boolean); return {
 ROUTES.ut = function () {
   var ci = curStage(), nx = nextItem();
   if (UT.open === null) UT.open = ci;
-  var h = topBar('Az Út', 'Tíz állomás, tíz történet') + mapCard();
+  var h = topBar('Az Út', 'Tíz állomás, tíz történet') + mapCard() + (typeof passLine === 'function' ? passLine() : '');
   if (nx) h += '<a class="btn wide" style="margin-top:14px" href="#lecke-' + nx.id + '">' + (S.xp ? 'Folytatás: ' : 'Kezdd itt: ') + soft(nx.t) + '</a>';
   h += '<div class="route">';
   var first = true;
@@ -5686,7 +5777,8 @@ ROUTES.ma = function () {
   var st = streak(), td = today(), w = wordOfDay(), cu = cultOfDay(), g = greet(), goal = S.goal || 30, did = td > 0;
   var line = !S.xp ? 'Az első lecke öt perc. Kezdjük.' : st > 1 ? (did ? st + '. napja tanulsz egyhuzamban.' : st + ' napos a sorozatod, ma még nem tanultál.') : did ? 'Ma már tanultál. Szép munka.' : 'Ma még nem tanultál.';
   var h = '<div class="mtop">' + MARK + '<span class="mt-brand">Bratanki</span>' + (st ? '<a class="mt-chip" href="#tarsoly" aria-label="' + st + ' napos sorozat">' + I.flame + '<b>' + st + '</b> nap</a>' : '') + '<button class="iconbtn" data-a="go" data-h="beallitasok" aria-label="Beállítások">' + I.gear + '</button></div>'
-    + '<div class="mgreet"><p class="hello"><span class="pl" lang="pl" role="button" tabindex="0">' + g[0] + '</span></p><p class="hello-hu">' + g[1] + ' ' + line + ' Ma <b>' + td + '</b> / ' + goal + ' korty.</p></div><div class="stack">';
+    + '<div class="mgreet"><p class="hello"><span class="pl" lang="pl" role="button" tabindex="0">' + g[0] + '</span></p><p class="hello-hu">' + g[1] + ' ' + line + (td ? ' Ma <b>' + td + '</b> / ' + goal + ' korty.' : '') + '</p></div><div class="stack">';
+  if (typeof onbCard === 'function' && onbNeeded()) h += onbCard();
   if (typeof napiCard === 'function') h += napiCard();
   if (typeof stationTicket === 'function') h += stationTicket();
   h += '<div id="bkwarn">' + bkWarn() + '</div>';
@@ -5699,8 +5791,9 @@ ROUTES.ma = function () {
       + '</div><p class="small muted" style="margin-top:10px">Bármelyik piros lengyel szóra koppinthatsz: megmutatja a kiejtést, a jelentést és a ragozást.</p></section>';
   }
   if (w) h += '<section class="card wod"><div class="eyebrow">A nap szava</div><div class="row" style="margin-top:4px"><div class="grow"><span class="word pl" role="button" tabindex="0" lang="pl">' + esc(w[0]) + '</span> <span class="resp">' + HU.resp(w[0]).html + '</span><div>' + esc(w[1]) + '</div>' + (w[2] ? '<div class="small muted">' + fmt(w[2]) + '</div>' : '') + '</div><button class="round sm aud" data-a="say" data-t="' + esc(w[0]) + '" aria-label="Hallgasd">' + I.play + '</button></div></section>';
+  if (typeof knDayCard === 'function') h += knDayCard();
   if (cu) h += '<a class="card" href="#lecke-' + cu.id + '"><div class="eyebrow">Tudtad?</div><h3 style="margin:6px 0 4px">' + soft(cu.t) + '</h3><p class="small muted">' + soft(cu.s) + '</p></a>';
-  h += '<a class="card statline" href="#tarsoly"><span class="grow">' + rankName() + ' · <b>' + learnedCount() + '</b> szó · <b>' + Object.keys(S.done).length + '</b> lecke · <b>' + S.xp + '</b> korty</span><span class="go">' + I.chev + '</span></a>';
+  h += '<a class="card statline" href="#tarsoly"><span class="grow">' + String(rankName()).replace(/<[^>]*>/g, '') + ' · <b>' + learnedCount() + '</b> szó · <b>' + Object.keys(S.done).length + '</b> lecke · <b>' + S.xp + '</b> korty</span><span class="go">' + I.chev + '</span></a>';
   view.innerHTML = h + '</div>';
 };
 
@@ -5719,14 +5812,41 @@ function toolFilter() {
     g.hidden = !n; if (n) any = true;
   });
   var e = el('tool-none'); if (e) e.hidden = any;
+  var dt = el('alltools'); if (dt && q) dt.open = true; else if (dt && !q) dt.open = !!S.set.edzall;
+}
+/* v16.10: az Edzés teteje mindig megmondja, mi a következő lépés; üres állapot nincs */
+function edzNow(due, ln, all) {
+  var big, t, sub, btn;
+  if (due) { big = '<span class="ch-n">' + due + '</span>'; t = 'kártya vár ismétlésre'; sub = ln + ' megtanult szó · ' + all + '-ből'; btn = '<button class="btn wide" data-a="review">Ismétlés indítása</button>'; }
+  else {
+    var nx = typeof napiNext === 'function' ? napiNext() : '', nl = nextItem();
+    big = '<span class="ch-n zero ok">' + I.check + '</span>';
+    if (nx === 'rev') { t = 'Nincs esedékes szókártya'; sub = 'A mai ismétlés mégis van: ' + napiSub('rev', 0) + '.'; btn = '<button class="btn wide" data-a="napi" data-k="rev">Ismétlés indítása</button>'; }
+    else if (nx) { t = 'Most nincs ismétlendő kártya'; sub = 'A mai tervben ez jön: ' + NAPI[nx][0].toLowerCase() + (napiWhat(nx, 0) ? ' · ' + napiWhat(nx, 0) : ''); btn = '<button class="btn wide" data-a="napi" data-k="' + nx + '">Tovább: ' + NAPI[nx][0] + '</button>'; }
+    else if (nl) { t = 'Ma minden megvan'; sub = 'Ami most jön, ráadás. A következő lecke: ' + soft(nl.t); btn = '<a class="btn wide" href="#lecke-' + nl.id + '">Következő lecke</a>'; }
+    else { t = 'Ma minden megvan'; sub = 'Az Út végére értél: innen a Felfedező és az Olvasó visz tovább.'; btn = '<a class="btn wide" href="#felfedezo">Felfedező</a>'; }
+    if (ln) sub += ' · ' + ln + ' megtanult szó';
+  }
+  return '<section class="card cards-hero"><div class="row">' + big + '<div class="grow"><b>' + t + '</b><span class="small muted">' + sub + '</span></div></div>'
+    + '<div class="col" style="margin-top:14px">' + btn + (ln >= 4 ? '<button class="textlink" data-a="cram">Gyorskör a megtanultakból</button>' : '') + '</div></section>';
+}
+/* v16.10: legfeljebb három eszköz, ami most illik: a hibáid, és az állomásod szintje szerint */
+function edzRec(od, miss) {
+  var ci = curStage(), r = [];
+  if (od || miss) r.push(['hibaim', I.fix, 'Hibáim', od ? od + ' saját hiba ma esedékes' : miss + ' rontott feladat vár']);
+  var pool = ci <= 1 ? [['labor', I.wave, 'Kiejtés-labor', 'a betűk és a hangsúly helye'], ['kapocs', I.link, 'Kapocs', 'szavak, amelyeket már ismersz'], ['hallas', I.ear, 'Hallásterem', 'füllel, szöveg nélkül']]
+    : ci <= 4 ? [['ragozo', I.table, 'Ragozóterem', 'az esetek és az igék gyakorlása'], ['hallas', I.ear, 'Hallásterem', 'füllel, szöveg nélkül'], ['kapocs', I.link, 'Kapocs', 'ismerős szavak, hamis barátok']]
+    : [['beszed', I.mic, 'Beszédterem', 'felolvasás és szóbeli feladat'], ['vizsga', I.medal, 'Vizsgaszimulátor', 'hivatalos szerkezet, A1-től C2-ig'], ['ragozo', I.table, 'Ragozóterem', 'végtelen ragozási feladat']];
+  pool.forEach(function (x) { if (r.length < 3) r.push(x); });
+  return '<section class="recs"><h3 class="rec-h">Most ezek illenek hozzád</h3><div class="rec-l">' + r.map(function (x) { return '<a class="rec" href="#' + x[0] + '"><span class="rec-i">' + x[1] + '</span><b>' + x[2] + '</b><small>' + x[3] + '</small></a>'; }).join('') + '</div></section>';
 }
 ROUTES.edzes = function () {
   var due = dueCards().length, ln = learnedCount(), all = Object.keys(WORDS).length, miss = S.miss.length;
   var oe = typeof oeLive === 'function' ? oeLive().length : 0, od = typeof oeDueKeys === 'function' ? oeDueKeys().length : 0;
   var h = topBar('Edzés') + '<div class="stack">';
-  h += '<section class="card cards-hero"><div class="row"><span class="ch-n' + (due ? '' : ' zero') + '">' + due + '</span><div class="grow"><b>' + (due ? 'kártya vár ismétlésre' : 'Most nincs esedékes kártya') + '</b><span class="small muted">' + ln + ' megtanult szó · ' + all + '-ből</span></div></div>'
-    + '<div class="col" style="margin-top:14px"><button class="btn wide" data-a="review"' + (due ? '' : ' disabled') + '>Ismétlés indítása</button>' + (ln >= 4 ? '<button class="textlink" data-a="cram">Gyorskör a megtanultakból</button>' : '') + '</div></section>';
+  h += edzNow(due, ln, all) + edzRec(od, miss);
   h += '<label class="tsearch">' + I.search + '<input id="tool-q" type="search" placeholder="Keresés az eszközök között" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Keresés az eszközök között"></label>';
+  h += '<details class="alltools" id="alltools"' + (S.set.edzall ? ' open' : '') + '><summary><span>Minden eszköz</span><small>szavak, nyelvtan, hallás, vizsga és játék</small></summary>';
   h += toolGroup('Szavak', 'g', [
     toolRow({ h: 'szotar', i: I.dict, t: 'Szókincstár', s: all + ' szó paklikban, keresővel', k: 'szotar szotar pakli' }),
     typeof kapInit === 'function' ? (kapInit(), toolRow({ h: 'kapocs', i: I.link, t: 'Kapocs', s: KAPL.length + ' ismerős szó, hamis barátok, csapdák', k: 'rokon hamis barat csapda' })) : '',
@@ -5747,9 +5867,10 @@ ROUTES.edzes = function () {
     toolRow({ h: 'vizsga', i: I.medal, t: 'Vizsgaszimulátor', s: (typeof vzSummary === 'function' && vzSummary()) || 'A1-től C2-ig, hivatalos szerkezet' }),
     toolRow({ h: 'slowko', i: I.grid5, t: 'Słówko', s: 'a nap szava hat próbából', k: 'slowko wordle' }),
     toolRow({ a: 'duel', i: I.swords, t: 'Szablyapárbaj', s: S.rec.duel ? 'rekordod: ' + S.rec.duel + ' pont' : 'hatvan másodperc' })]);
-  h += '<p class="small muted" id="tool-none" hidden style="text-align:center;margin-top:8px">Nincs ilyen eszköz.</p>';
+  h += '</details><p class="small muted" id="tool-none" hidden style="text-align:center;margin-top:8px">Nincs ilyen eszköz.</p>';
   view.innerHTML = h + '</div>';
   var q = el('tool-q'); if (q) q.addEventListener('input', toolFilter);
+  var dt = el('alltools'); if (dt) dt.addEventListener('toggle', function () { if (!el('tool-q') || !el('tool-q').value) { S.set.edzall = dt.open ? 1 : 0; touch(); } });
 };
 ROUTES.ragozo = function () {
   var h = topBar('Ragozóterem', 'Végtelen feladat a teljes szótárból', 'edzes') + '<div class="stack">';
@@ -5836,6 +5957,134 @@ PARAM.nyk = function (id) {
   view.innerHTML = h; view.scrollTop = 0;
 };
 ACT.nykgo = function (a, e) { if (e && e.preventDefault) e.preventDefault(); var s = el('nyk-s' + a.getAttribute('data-j')); if (s) view.scrollTop += s.getBoundingClientRect().top - view.getBoundingClientRect().top - 70; };
+
+/* ================= v16.10: kezelhetőség – rezgés, betűméret, lebegő gomb, kánonlapozás, napi kánontétel, útlevél, első indítás ================= */
+
+/* ---------- rezgés jó és rossz válasznál (iPhone-on a böngésző nem engedi, ott csendben kimarad) ---------- */
+function vibe(k) {
+  if (!S.set.vib || !navigator.vibrate) return;
+  var p = k === 'ok' ? 18 : k === 'no' ? [45, 60, 45] : k === 'fin' ? [25, 50, 25, 50, 70] : 0;
+  if (p) { try { navigator.vibrate(p); } catch (e) {} }
+}
+(function () { var o = snd; snd = function (k) { if (k !== 'tap') vibe(k); return o(k); }; })();
+
+/* ---------- betűméret: a tartalom nagyítása (a fülsor marad) ---------- */
+var FS_Z = [1, 1.12, 1.25];
+function fsApply() { var z = FS_Z[+S.set.fs || 0] || 1; view.style.zoom = z === 1 ? '' : String(z); document.documentElement.classList.toggle('fs-big', z > 1); }
+
+/* ---------- a lebegő gomb (Gyakorlás, Tovább) görgetés közben félrehúzódik, felfelé görgetve és az oldal alján visszajön ---------- */
+var CTA_Y = 0;
+view.addEventListener('scroll', function () {
+  var y = view.scrollTop, d = y - CTA_Y, end = y + view.clientHeight >= view.scrollHeight - 90;
+  if (Math.abs(d) < 6 && !end) return;
+  view.classList.toggle('cta-off', d > 0 && !end && y > 120);
+  CTA_Y = y;
+}, { passive: true });
+
+/* ---------- Kánon: a kategóriasáv egy vízszintes sor, a kijelölt látszik ---------- */
+function knChipsCenter() {
+  var ch = el('kn-chips'), on = ch && ch.querySelector('.chip.on');
+  if (on) ch.scrollLeft = on.offsetLeft - (ch.clientWidth - on.offsetWidth) / 2;
+}
+/* ujjhúzással lapozás a tételek között (vízszintes húzás, legalább 70 pont, gyorsan) */
+var KSW = null;
+view.addEventListener('touchstart', function (e) {
+  if (cur !== 'kn' || e.touches.length !== 1) { KSW = null; return; }
+  var t = e.touches[0]; KSW = { x: t.clientX, y: t.clientY, t: Date.now() };
+}, { passive: true });
+view.addEventListener('touchend', function (e) {
+  if (!KSW || cur !== 'kn') return;
+  var t = e.changedTouches[0], dx = t.clientX - KSW.x, dy = t.clientY - KSW.y, dt = Date.now() - KSW.t; KSW = null;
+  if (Math.abs(dx) < 70 || Math.abs(dy) > 45 || dt > 700) return;
+  var a = view.querySelector('.kn-nav a[rel=' + (dx < 0 ? 'next' : 'prev') + ']');
+  if (a) { S.rec.knsw = 1; touch(); location.hash = a.getAttribute('href'); }
+}, { passive: true });
+
+/* ---------- a nap kánontétele a Ma lapon: egy még meg nem nyitott tétel, egész nap ugyanaz ---------- */
+function knDay() {
+  if (typeof KANON === 'undefined' || !KANON.length) return null;
+  var k = dayKey(), r = S.rec.knd;
+  if (r && r.d === k) { var e0 = knBySlug(r.s); if (e0) return e0; }
+  var un = KANON.filter(function (e) { return !(S.kn && S.kn[knSlug(e[1])]); }), pool = un.length ? un : KANON;
+  var e = pool[(dayNum() * 7919) % pool.length];
+  S.rec.knd = { d: k, s: knSlug(e[1]) }; touch();
+  return e;
+}
+function knDayCard() {
+  var e = knDay(); if (!e) return '';
+  return '<a class="card knday" href="#kn-' + knSlug(e[1]) + '">' + knThumb(e) + '<span class="knr-t"><span class="eyebrow">A nap kánontétele · ' + esc(knCat(e[0])) + '</span><span class="knr-n" lang="pl">' + esc(e[1]) + '</span><span class="knr-s">' + esc(plain(e[3])) + '</span></span></a>';
+}
+
+/* ---------- Útlevél: minden lezárt állomás pecsétet kap ---------- */
+I.pass = svg('<rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3.2"/><path d="M8.5 16.5h7"/>');
+function passDate(st, i) {
+  if (S.bad && S.bad['st' + i]) return S.bad['st' + i];
+  var t = 0; st.items.forEach(function (id) { var d = S.done[id]; if (d && d.t > t) t = d.t; });
+  return t || Date.now();
+}
+function passN() { return STAGES.filter(stageDone).length; }
+function passCheck() {
+  S.pass = S.pass || {};
+  var nw = [];
+  STAGES.forEach(function (st, i) { if (!S.pass[i] && stageDone(st)) { S.pass[i] = passDate(st, i); nw.push(st.name); } });
+  if (nw.length) { touch(); setTimeout(function () { toast('Új pecsét az útlevélben: ' + nw.join(', ')); snd('fin'); }, 700); }
+}
+function passLine() {
+  var n = passN();
+  return '<a class="card passline" href="#utlevel"><span class="pl-i">' + I.pass + '</span><span class="grow"><b>Útlevél</b><span class="small muted">' + (n ? n + ' / ' + STAGES.length + ' pecsét · ' : '') + 'minden lezárt állomás pecsétet kap</span></span><span class="go">' + I.chev + '</span></a>';
+}
+function passDay(t) { var d = new Date(t); return d.getFullYear() + '. ' + pad(d.getMonth() + 1) + '. ' + pad(d.getDate()) + '.'; }
+ROUTES.utlevel = function () {
+  passCheck();
+  var n = passN(), h = topBar('Útlevél', n + ' / ' + STAGES.length + ' pecsét', 'ut') + '<div class="stack">';
+  h += '<section class="pass-cover"><span class="pc-mark">' + MARK + '</span><span class="pc-t">Paszport</span><span class="pc-s">Útlevél · Bratanki</span><span class="pc-n">' + (n ? n + ' állomás lepecsételve' : 'Még üres. Az első pecsétet a budapesti állomás végén kapod.') + '</span></section>';
+  h += '<section class="pass-grid">' + STAGES.map(function (st, i) {
+    var s = stStat(st), done = stageDone(st), ex = typeof examPassed === 'function' && examPassed(i);
+    if (!done) return '<button class="pass-slot" data-a="passgo" data-i="' + i + '"><span class="ps-k">' + (i + 1) + '. állomás · ' + st.lvl + '</span><span class="ps-n">' + st.name + '</span><span class="ps-p">' + s.dn + ' / ' + s.n + ' lecke</span></button>';
+    var rot = ((i * 37) % 13) - 6, ink = ['ink-r', 'ink-g', 'ink-b'][i % 3];
+    return '<div class="pass-slot done"><div class="stamp ' + ink + '" style="transform:rotate(' + rot + 'deg)"><span class="sp-em">' + (EMB[st.em] || '') + '</span><span class="sp-n">' + st.name + '</span><span class="sp-d">' + passDay((S.pass && S.pass[i]) || passDate(st, i)) + '</span><span class="sp-l">' + st.lvl + '</span></div>' + (ex ? '<span class="ps-ex">' + I.star + ' állomásvizsga megvan</span>' : '') + '</div>';
+  }).join('') + '</section>';
+  h += '<p class="small muted" style="margin:14px 4px 0">A pecsét akkor jár, amikor az állomás minden leckéje és paklija kész. Az állomásvizsga csillagot ad mellé.</p>';
+  view.innerHTML = h + '</div>';
+};
+
+ACT.passgo = function (a) { var i = +a.getAttribute('data-i'); UT.open = i; go('ut'); setTimeout(function () { utOpen(i, false, false); }, 40); };
+
+/* ---------- első indítás: három kérdés a Ma lapon ---------- */
+var ONB = { lvl: null };
+function onbNeeded() { return !S.rec.onb && !S.xp && !Object.keys(S.done).length; }
+function onbSeg(k, opts, curv) { return '<div class="seg">' + opts.map(function (o) { return '<button data-a="onb" data-k="' + k + '" data-v="' + o[0] + '" aria-pressed="' + (String(curv) === String(o[0])) + '">' + o[1] + '</button>'; }).join('') + '</div>'; }
+function onbCard() {
+  return '<section class="card onb"><h3>Üdv! Három gyors kérdés</h3><p class="small muted">Ezek alapján rakom össze a napodat. Bármikor átállíthatod a beállításokban.</p>'
+    + '<div class="field"><span class="lab">Honnan indulsz?</span>' + onbSeg('lvl', [[0, 'Teljesen kezdő'], [1, 'Tudok már valamit']], ONB.lvl) + '</div>'
+    + '<div class="field"><span class="lab">Mennyi időd van naponta?</span>' + onbSeg('napi', [[15, '15 perc'], [30, '30 perc'], [60, '60 perc']], S.set.napi) + '</div>'
+    + '<div class="field"><span class="lab">Hogyan beszélsz magadról? A lengyel múlt idő jelöli a beszélő nemét.</span>' + onbSeg('g', [['m', 'byłem (férfi)'], ['f', 'byłam (nő)']], S.set.g) + '</div>'
+    + '<div class="row wrap" style="margin-top:14px;gap:10px"><button class="btn" data-a="onbok">Kész, indulhatunk</button><button class="textlink" data-a="onbskip">Kihagyom</button></div></section>';
+}
+ACT.onb = function (a) {
+  var k = a.getAttribute('data-k'), v = a.getAttribute('data-v');
+  if (k === 'lvl') ONB.lvl = +v; else if (k === 'g') S.set.g = v; else S.set[k] = +v;
+  touch(); var y = view.scrollTop; ROUTES.ma(); view.scrollTop = y;
+};
+ACT.onbskip = function () { S.rec.onb = 1; touch(); ROUTES.ma(); };
+ACT.onbok = function () {
+  S.rec.onb = 1; touch();
+  if (ONB.lvl === 1) { toast('Minden állomás nyitva van. A Szókincsmérő megmutatja, nagyjából hol tartasz.'); go('meres'); }
+  else { ROUTES.ma(); toast('Kezdhetjük: a menetrend első sora az első lecke.'); }
+};
+
+/* ---------- bekötés: minden oldalváltás után ---------- */
+(function () {
+  var o = route;
+  route = function () {
+    fsApply(); view.classList.remove('cta-off'); CTA_Y = 0;
+    o.apply(this, arguments);
+    if (cur === 'kanon') knChipsCenter();
+    if (cur === 'kn' && !S.rec.knsw) { var nv = view.querySelector('.kn-nav'); if (nv) nv.insertAdjacentHTML('afterend', '<p class="tiny muted kn-swhint">Ujjal oldalra húzva is lapozhatsz.</p>'); }
+    if (cur === 'ma' || cur === 'ut') passCheck();
+  };
+  var k = ROUTES.kanon; ROUTES.kanon = function () { k.apply(this, arguments); knChipsCenter(); };
+})();
 
 /* ================= Kapocs (v14): rokon szavak, hamis barátok, magyar csapdák =================
    Adat: src/data/40.js (KAP_SRC, tools/gen_kap.py). Egy bejegyzés: pl[@jelentés]=nyelv:szó,…[~megjegyzés];
